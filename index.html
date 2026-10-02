@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IvoryVows | Wedding Invitation Boutique</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #FFF6F0 0%, #F8EDE4 100%);
@@ -15,9 +15,7 @@
             --text-dark: #2C2C2C;
             --text-muted: #6E6E6E;
             --border-color: #EFE0D5;
-            --shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
-            --pill-bg: #FAF0EB;
-            --pill-hover: #F2E2DA;
+            --shadow: 0 10px 30px rgba(197, 160, 89, 0.12);
         }
 
         * {
@@ -47,7 +45,7 @@
             z-index: 1;
         }
 
-        /* Header Layout */
+        /* Header Layout matching reference */
         header {
             background: rgba(255, 246, 240, 0.95);
             backdrop-filter: blur(10px);
@@ -63,329 +61,272 @@
         }
 
         .header-logo {
-            height: 40px;
+            height: 38px;
             width: auto;
             object-fit: contain;
         }
 
-        /* Right side custom tag / button */
-        .header-tag {
-            background-color: var(--pill-bg);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            color: var(--primary-gold);
-            padding: 5px 12px;
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 5px 10px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 130px 20px 20px 20px;
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 34px;
-            font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 15px;
-            line-height: 1.3;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        .hero h1 span {
-            color: var(--primary-gold);
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        /* Single Frame Floating Slider */
-        .single-frame-slider {
-            max-width: 500px;
-            margin: 0 auto 35px auto;
+        .menu-icon-btn {
             background: #FFFFFF;
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 2;
-            min-height: 90px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Main Wrapper */
+        .main-container {
+            padding: 110px 15px 40px 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
             text-align: center;
         }
 
-        .floating-slide {
-            position: absolute;
-            width: 100%;
-            padding: 0 20px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.6s ease-in-out;
+        /* Category Tabs Grid */
+        .category-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 25px;
+            background: #FFFFFF;
+            padding: 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
         }
 
-        .floating-slide.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .floating-slide h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 16px;
-            color: var(--primary-gold);
-            margin-bottom: 4px;
-        }
-
-        .floating-slide p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px 50px 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Action Pills */
-        .services-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .service-pill {
-            background-color: var(--pill-bg);
-            border: 1px solid rgba(197, 160, 89, 0.25);
-            border-radius: 50px;
-            padding: 15px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .tab-btn {
+            background: #FAF0EB;
+            border: 1px solid transparent;
+            padding: 10px;
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .service-pill:hover {
-            background-color: var(--pill-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-            border-color: var(--primary-gold);
+        .tab-btn.active {
+            background: linear-gradient(135deg, #C5A059 0%, #B38F48 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
         }
 
-        .pill-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .instruction-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
         }
 
-        .pill-icon {
-            font-size: 18px;
-            background: white;
-            width: 42px;
-            height: 42px;
+        /* Carousel Slider Layout (Reference style) */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .pill-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .pill-dots {
-            font-size: 16px;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-        }
-
-        /* Filtered Content Blocks */
-        .section-block {
-            display: none;
-            margin-bottom: 40px;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .section-block.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-header-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            margin-bottom: 18px;
-            color: var(--primary-gold);
-            text-align: center;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            margin-bottom: 25px;
             overflow: hidden;
-            box-shadow: var(--shadow);
         }
 
-        .media-box {
-            position: relative;
+        .carousel-track {
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s ease-in-out;
             width: 100%;
-            height: 280px;
+            position: relative;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .carousel-card {
+            position: absolute;
+            width: 260px;
+            height: 380px;
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* Card Positioning for 3D Flow effect */
+        .carousel-card.prev {
+            transform: translateX(-160px) scale(0.85);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .carousel-card.active {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 3;
+            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.2);
+        }
+
+        .carousel-card.next {
+            transform: translateX(160px) scale(0.85);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .carousel-card.hidden {
+            display: none;
+        }
+
+        .card-media {
+            width: 100%;
+            height: 270px;
+            position: relative;
             background: #f4f1ea;
         }
 
-        .media-box video, .media-box img {
+        .card-media img, .card-media video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .card-content {
-            padding: 16px;
+        /* Open Website Center Button on Media */
+        .open-preview-btn {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+            cursor: pointer;
+        }
+
+        .card-info {
+            padding: 15px;
             text-align: center;
         }
 
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
+        .card-category-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
         }
 
-        .order-btn {
-            background-color: var(--primary-gold);
-            color: white;
-            border: none;
-            padding: 11px 18px;
+        .card-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Carousel Navigation Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid var(--border-color);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .carousel-arrow.prev-arrow { left: 5px; }
+        .carousel-arrow.next-arrow { right: 5px; }
+
+        /* Dots Indicator */
+        .dots-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 30px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #EFE0D5;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            width: 20px;
+            border-radius: 4px;
+            background: var(--primary-gold);
+        }
+
+        /* View All Samples Button */
+        .view-all-btn {
+            background: #FFFFFF;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 12px 25px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .order-btn:hover {
-            background-color: var(--gold-hover);
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            background: #FFFFFF;
-            padding: 25px 20px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
-            margin-bottom: 30px;
-            text-align: center;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .reviews-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: var(--primary-gold);
-            margin-bottom: 15px;
+        .view-all-btn:hover {
+            background: var(--primary-gold);
+            color: white;
         }
 
-        .review-card {
-            background: var(--pill-bg);
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            text-align: left;
-            border: 1px solid var(--border-color);
-        }
-
-        .review-stars {
-            color: #D4AF37;
-            font-size: 12px;
-            margin-bottom: 4px;
-        }
-
-        .review-text {
-            font-size: 12px;
-            color: var(--text-dark);
-            font-style: italic;
-            margin-bottom: 6px;
-        }
-
-        .review-author {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--primary-gold);
-            text-align: right;
-        }
-
-        /* About & Contact */
-        .about-section {
-            background: white;
-            padding: 25px 20px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            margin-bottom: 25px;
-        }
-
-        .about-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: var(--primary-gold);
-            margin-bottom: 8px;
-        }
-
-        .about-section p {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        .contact-box {
-            text-align: center;
-            padding: 20px;
-            background: rgba(197, 160, 89, 0.05);
-            border-radius: 20px;
-            border: 1px dashed var(--primary-gold);
-            margin-bottom: 25px;
-        }
-
-        .contact-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        /* Modal Styles */
+        /* Modal Popup */
         .modal {
             display: none;
             position: fixed;
@@ -436,10 +377,6 @@
             outline: none;
         }
 
-        .country-input:focus {
-            border-color: var(--primary-gold);
-        }
-
         .close-modal {
             position: absolute;
             top: 10px;
@@ -466,234 +403,57 @@
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 11px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header: Logo.PNG on left, Cute Custom Badge on right -->
+    <!-- Header matching reference layout -->
     <header>
         <img src="logo.PNG" alt="IvoryVows Logo" class="header-logo" onerror="this.style.display='none'; document.getElementById('fallback-logo-text').style.display='block';">
         <span id="fallback-logo-text" style="display:none; font-family:'Playfair Display',serif; font-weight:700; color:var(--primary-gold); font-size:18px;">IvoryVows</span>
         
-        <div class="header-tag">✨ Bespoke Invites</div>
+        <div class="header-right">
+            <div class="lang-btn">🌐 EN</div>
+            <div class="menu-icon-btn" onclick="alert('Menu options can be placed here!')">☰</div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Invitations as special as the moment itself <span>designed to impress</span></h1>
-        <p>The best events don't start on the day—they start with the invitation.</p>
-    </section>
-
-    <!-- Single Frame Floating Slider -->
-    <div class="single-frame-slider">
-        <div class="floating-slide active">
-            <h3>💍 RSVP Built-In</h3>
-            <p>Effortless guest tracking directly through your digital invite.</p>
-        </div>
-        <div class="floating-slide">
-            <h3>✨ Cinematic Video Invites</h3>
-            <p>Stunning motion graphics crafted with royal elegance.</p>
-        </div>
-        <div class="floating-slide">
-            <h3>🌐 Interactive Web Stories</h3>
-            <p>Scratch cards, countdowns, and gorgeous photo timelines.</p>
-        </div>
-    </div>
-
-    <div class="container">
+    <div class="main-container">
         
-        <!-- Interactive Service Pills -->
-        <div class="services-list" id="servicesMenu">
-            <div class="service-pill" onclick="showSection('wedding')">
-                <div class="pill-left">
-                    <div class="pill-icon">💍</div>
-                    <div class="pill-title">Video Wedding Invites</div>
-                </div>
-                <div class="pill-dots">&bull;&bull;&bull;</div>
-            </div>
-
-            <div class="service-pill" onclick="showSection('websites')">
-                <div class="pill-left">
-                    <div class="pill-icon">🌐</div>
-                    <div class="pill-title">Website Wedding Invites</div>
-                </div>
-                <div class="pill-dots">&bull;&bull;&bull;</div>
-            </div>
-
-            <div class="service-pill" onclick="showSection('babyshower')">
-                <div class="pill-left">
-                    <div class="pill-icon">🍼</div>
-                    <div class="pill-title">Baby Shower Invites</div>
-                </div>
-                <div class="pill-dots">&bull;&bull;&bull;</div>
-            </div>
-
-            <div class="service-pill" onclick="showSection('birthday')">
-                <div class="pill-left">
-                    <div class="pill-icon">🎂</div>
-                    <div class="pill-title">Birthdays & Milestones</div>
-                </div>
-                <div class="pill-dots">&bull;&bull;&bull;</div>
-            </div>
-
-            <div class="service-pill" onclick="showSection('festivals')">
-                <div class="pill-left">
-                    <div class="pill-icon">✨</div>
-                    <div class="pill-title">Festivals & Celebrations</div>
-                </div>
-                <div class="pill-dots">&bull;&bull;&bull;</div>
-            </div>
-
-            <div class="service-pill" onclick="showSection('others')">
-                <div class="pill-left">
-                    <div class="pill-icon">💌</div>
-                    <div class="pill-title">Others & Custom Requests</div>
-                </div>
-                <div class="pill-dots">&bull;&bull;&bull;</div>
-            </div>
+        <!-- Category Selector Tabs -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="switchCategory('wedding-website')">Wedding Website</button>
+            <button class="tab-btn" onclick="switchCategory('wedding-video')">Wedding Video</button>
+            <button class="tab-btn" onclick="switchCategory('birthday-website')">Birthday Website</button>
+            <button class="tab-btn" onclick="switchCategory('birthday-video')">Birthday Video</button>
         </div>
 
-        <!-- SECTION 1: Video Wedding Invites -->
-        <div class="section-block" id="wedding">
-            <h2 class="section-header-title">💍 Video Wedding Invites</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-holding-hands-41772-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Classic Royal Gold Wedding</div>
-                        <button class="order-btn" onclick="openOrderModal('Classic Royal Gold Wedding')">Place Order via Insta DM</button>
-                    </div>
-                </div>
-            </div>
-            <button class="order-btn" style="margin-top:15px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);" onclick="backToMenu()">← Back to Menu</button>
-        </div>
+        <p class="instruction-text">Choose a celebration format, then drag through the real samples. Tap the centre card to play or open a website.</p>
 
-        <!-- SECTION 2: Website Wedding Invites -->
-        <div class="section-block" id="websites">
-            <h2 class="section-header-title">🌐 Website Wedding Invites</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Website Preview">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Interactive Story Web Template</div>
-                        <button class="order-btn" onclick="openOrderModal('Interactive Story Web Template')">Place Order via Insta DM</button>
-                    </div>
-                </div>
-            </div>
-            <button class="order-btn" style="margin-top:15px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);" onclick="backToMenu()">← Back to Menu</button>
-        </div>
-
-        <!-- SECTION 3: Baby Shower -->
-        <div class="section-block" id="babyshower">
-            <h2 class="section-header-title">🍼 Baby Shower Invites</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-baby-feet-in-mother-s-hands-42790-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Little Prince Baby Shower</div>
-                        <button class="order-btn" onclick="openOrderModal('Little Prince Baby Shower')">Place Order via Insta DM</button>
-                    </div>
-                </div>
-            </div>
-            <button class="order-btn" style="margin-top:15px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);" onclick="backToMenu()">← Back to Menu</button>
-        </div>
-
-        <!-- SECTION 4: Birthdays -->
-        <div class="section-block" id="birthday">
-            <h2 class="section-header-title">🎂 Birthdays & Milestones</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-sparklers-celebrating-41775-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Golden Sparkle Milestone Birthday</div>
-                        <button class="order-btn" onclick="openOrderModal('Golden Sparkle Milestone Birthday')">Place Order via Insta DM</button>
-                    </div>
-                </div>
-            </div>
-            <button class="order-btn" style="margin-top:15px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);" onclick="backToMenu()">← Back to Menu</button>
-        </div>
-
-        <!-- SECTION 5: Festivals -->
-        <div class="section-block" id="festivals">
-            <h2 class="section-header-title">✨ Festivals & Celebrations</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Festival Preview">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Royal Festive Greeting Invite</div>
-                        <button class="order-btn" onclick="openOrderModal('Royal Festive Greeting Invite')">Place Order via Insta DM</button>
-                    </div>
-                </div>
-            </div>
-            <button class="order-btn" style="margin-top:15px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);" onclick="backToMenu()">← Back to Menu</button>
-        </div>
-
-        <!-- SECTION 6: Others -->
-        <div class="section-block" id="others">
-            <h2 class="section-header-title">💌 Others & Custom Requests</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Custom Invite">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Customized Special Event Invite</div>
-                        <button class="order-btn" onclick="openOrderModal('Customized Special Event Invite')">Place Order via Insta DM</button>
-                    </div>
-                </div>
-            </div>
-            <button class="order-btn" style="margin-top:15px; background: transparent; border: 1px solid var(--primary-gold); color: var(--primary-gold);" onclick="backToMenu()">← Back to Menu</button>
-        </div>
-
-        <!-- Customer Reviews Section -->
-        <div class="reviews-section">
-            <h2>What Couples Say 💬</h2>
+        <!-- Carousel Slider Section -->
+        <div class="carousel-container">
+            <div class="carousel-arrow prev-arrow" onclick="prevCard()">❮</div>
             
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <div class="review-text">"Our guests were blown away by the interactive web invite! The scratch card feature was so unique and cute."</div>
-                <div class="review-author">— Ayesha & Zeeshan</div>
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Cards will be dynamically loaded based on category -->
             </div>
 
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <div class="review-text">"Super fast delivery and amazing royal aesthetics. Thank you IvoryVows for making our save-the-date magical!"</div>
-                <div class="review-author">— Natasha M.</div>
-            </div>
+            <div class="carousel-arrow next-arrow" onclick="nextCard()">❯</div>
         </div>
 
-        <!-- About Section -->
-        <div class="about-section">
-            <h2>About IvoryVows</h2>
-            <p>Crafting eternal memories, one invitation at a time. Bespoke digital invites designed with love.</p>
-        </div>
+        <!-- Dots Pagination -->
+        <div class="dots-indicator" id="dotsContainer"></div>
 
-        <!-- Contact Section -->
-        <div class="contact-box">
-            <h3>Need Quick Assistance?</h3>
-            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Connect with us on Instagram for custom orders.</p>
-            <a href="https://www.instagram.com/ivoryvows_invites/" target="_blank" style="color: var(--primary-gold); font-weight: 600; text-decoration: none;">@ivoryvows_invites</a>
-        </div>
+        <!-- View All Samples Button -->
+        <button class="view-all-btn" onclick="openOrderModal('All Samples Catalog')">
+            View all samples →
+        </button>
 
     </div>
 
-    <!-- Order Modal Popup -->
+    <!-- Order / Inquiry Modal -->
     <div class="modal" id="orderModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeOrderModal()">&times;</span>
@@ -707,7 +467,6 @@
             </div>
 
             <input type="text" id="userCountry" class="country-input" placeholder="Enter your Country (e.g. UAE, UK, USA)">
-
             <button class="submit-order-btn" onclick="copyAndOpenInstagram()">Copy Message & Open Instagram</button>
         </div>
     </div>
@@ -717,38 +476,101 @@
     </footer>
 
     <script>
-        let currentFloatingSlide = 0;
-        const floatingSlides = document.querySelectorAll('.floating-slide');
+        // Sample Data categorized
+        const sampleData = {
+            'wedding-website': [
+                { title: "Arabic Envelop", type: "Wedding Website", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" },
+                { title: "Heritage Palace", type: "Wedding Website", img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" },
+                { title: "Bosphorus Pearl", type: "Wedding Website", img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" },
+                { title: "Château Blush", type: "Wedding Website", img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" }
+            ],
+            'wedding-video': [
+                { title: "Royal Gold Cinematic", type: "Wedding Video", img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" },
+                { title: "Floral Bloom Invite", type: "Wedding Video", img: "https://images.unsplash.com/photo-1545232979-fbf802c64838?auto=format&fit=crop&w=600&q=80" }
+            ],
+            'birthday-website': [
+                { title: "Golden Sparkle Milestone", type: "Birthday Website", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" },
+                { title: "Little Prince Celebration", type: "Birthday Website", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" }
+            ],
+            'birthday-video': [
+                { title: "Party Confetti Blast", type: "Birthday Video", img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" }
+            ]
+        };
 
-        function nextFloatingSlide() {
-            floatingSlides[currentFloatingSlide].classList.remove('active');
-            currentFloatingSlide = (currentFloatingSlide + 1) % floatingSlides.length;
-            floatingSlides[currentFloatingSlide].classList.add('active');
-        }
-        setInterval(nextFloatingSlide, 3000);
+        let currentCategory = 'wedding-website';
+        let currentIndex = 0;
 
-        function showSection(sectionId) {
-            document.getElementById('servicesMenu').style.display = 'none';
-            document.querySelector('.single-frame-slider').style.display = 'none';
+        function switchCategory(category) {
+            currentCategory = category;
+            currentIndex = 0;
             
-            let sections = document.querySelectorAll('.section-block');
-            sections.forEach(sec => sec.classList.remove('active'));
+            // Update active tab styling
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
             
-            document.getElementById(sectionId).classList.add('active');
-            window.scrollTo({ top: 200, behavior: 'smooth' });
+            renderCarousel();
         }
 
-        function backToMenu() {
-            let sections = document.querySelectorAll('.section-block');
-            sections.forEach(sec => sec.classList.remove('active'));
-            
-            document.getElementById('servicesMenu').style.display = 'flex';
-            document.querySelector('.single-frame-slider').style.display = 'flex';
-            window.scrollTo({ top: 200, behavior: 'smooth' });
+        function renderCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('dotsContainer');
+            track.innerHTML = '';
+            dotsContainer.innerHTML = '';
+
+            const items = sampleData[currentCategory];
+
+            items.forEach((item, index) => {
+                // Create Card
+                const card = document.createElement('div');
+                card.className = 'carousel-card';
+                
+                if (index === currentIndex) {
+                    card.classList.add('active');
+                } else if (index === (currentIndex - 1 + items.length) % items.length) {
+                    card.classList.add('prev');
+                } else if (index === (currentIndex + 1) % items.length) {
+                    card.classList.add('next');
+                } else {
+                    card.classList.add('hidden');
+                }
+
+                card.onclick = () => { currentIndex = index; renderCarousel(); };
+                card.innerHTML = `
+                    <div class="card-media">
+                        <img src="${item.img}" alt="${item.title}">
+                        <button class="open-preview-btn" onclick="event.stopPropagation(); openOrderModal('${item.title}')">
+                            ▶ Open website
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-category-label">${item.type}</div>
+                        <div class="card-heading">${item.title}</div>
+                    </div>
+                `;
+                track.appendChild(card);
+
+                // Create Dot
+                const dot = document.createElement('div');
+                dot.className = index === currentIndex ? 'dot active' : 'dot';
+                dot.onclick = () => { currentIndex = index; renderCarousel(); };
+                dotsContainer.appendChild(dot);
+            });
         }
 
+        function nextCard() {
+            const items = sampleData[currentCategory];
+            currentIndex = (currentIndex + 1) % items.length;
+            renderCarousel();
+        }
+
+        function prevCard() {
+            const items = sampleData[currentCategory];
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            renderCarousel();
+        }
+
+        // Modal Functions
         let currentProduct = "";
-
         function openOrderModal(productName) {
             currentProduct = productName;
             document.getElementById('selectedProductText').innerText = "Selected: " + productName;
@@ -769,12 +591,10 @@
             }
 
             let instaUsername = "ivoryvows_invites"; 
-            let textToCopy = `Hi, I want to order "${currentProduct}". My country is ${country}. Please send me prices and details.`;
+            let textToCopy = `Hi, I want to order/check "${currentProduct}". My country is ${country}. Please send me details.`;
 
             navigator.clipboard.writeText(textToCopy).then(() => {
                 alert("Message copied! Now open Instagram DM and paste it.");
-            }).catch(err => {
-                console.log('Failed to copy', err);
             });
 
             setTimeout(() => {
@@ -783,6 +603,9 @@
             
             closeOrderModal();
         }
+
+        // Initial Load
+        renderCarousel();
     </script>
 </body>
 </html>
