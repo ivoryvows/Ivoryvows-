@@ -215,15 +215,31 @@
         }
 
         .modal-instruction {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-dark);
             background: #FDFBF7;
             border: 1px solid var(--border-color);
             padding: 12px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.5;
             font-weight: 500;
+            text-align: left;
+        }
+
+        .country-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .country-input:focus {
+            border-color: var(--primary-gold);
         }
 
         .close-modal {
@@ -367,12 +383,16 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeOrderModal()">&times;</span>
             <h3>Place Your Order</h3>
-            <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; margin-bottom: 15px;" id="selectedProductText"></p>
+            <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; margin-bottom: 12px;" id="selectedProductText"></p>
             
-            <!-- Clear & Detailed Instruction Message -->
             <div class="modal-instruction">
-                Please message me your design name and your country in Instagram DM so I can send you the prices and details.
+                1. Type your country below.<br>
+                2. Click copy & open Instagram.<br>
+                3. Paste the message in DM.
             </div>
+
+            <!-- Country Input Box -->
+            <input type="text" id="userCountry" class="country-input" placeholder="Enter your Country (e.g. UAE, UK, USA)">
 
             <button class="submit-order-btn" onclick="copyAndOpenInstagram()">Copy Message & Open Instagram</button>
         </div>
@@ -388,6 +408,7 @@
         function openOrderModal(productName) {
             currentProduct = productName;
             document.getElementById('selectedProductText').innerText = "Selected: " + productName;
+            document.getElementById('userCountry').value = ""; // Reset input field
             document.getElementById('orderModal').style.display = 'flex';
         }
 
@@ -396,12 +417,19 @@
         }
 
         function copyAndOpenInstagram() {
-            let instaUsername = "ivoryvows_invites"; 
-            let textToCopy = `Hi, I want to order "${currentProduct}". Here is my design name and country: `;
+            let country = document.getElementById('userCountry').value.trim();
+            if (country === "") {
+                alert("Please enter your country first!");
+                document.getElementById('userCountry').focus();
+                return;
+            }
 
-            // Automatically copies the text so user can easily paste it
+            let instaUsername = "ivoryvows_invites"; 
+            let textToCopy = `Hi, I want to order "${currentProduct}". My country is ${country}. Please send me prices and details.`;
+
+            // Automatically copies the text with design and country
             navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Message copied! Now open DM and paste it.");
+                alert("Message copied! Now open Instagram DM and paste it.");
             }).catch(err => {
                 console.log('Failed to copy', err);
             });
