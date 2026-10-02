@@ -1,538 +1,2872 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IvoryVows | Royal & Aesthetic Digital Invitations</title>
-    <!-- Google Fonts for Royal Look -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #FDFBF7;
-            --card-bg: #FFFFFF;
-            --primary-gold: #C5A059;
-            --gold-hover: #B38F48;
-            --text-dark: #2C2C2C;
-            --text-muted: #666666;
-            --border-color: #EFECE6;
-            --shadow: 0 10px 30px rgba(197, 160, 89, 0.08);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+<title>Ivory Vows | Digital Invitations</title>
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+<meta name="description"
+content="Ivory Vows creates elegant digital wedding, birthday, baby shower and celebration invitations.">
 
-        header {
-            background: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<style>
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--primary-gold);
-            letter-spacing: 1px;
-        }
+/* =========================================================
+   IVORY VOWS — COMPLETE WEBSITE CSS
+========================================================= */
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .nav-links a:hover {
-            color: var(--primary-gold);
-        }
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#30252a;
+    background:
+        radial-gradient(circle at 5% 5%, #f5dfe5 0%, transparent 28%),
+        radial-gradient(circle at 95% 10%, #e5e0f4 0%, transparent 30%),
+        radial-gradient(circle at 50% 90%, #e7efe5 0%, transparent 35%),
+        linear-gradient(135deg,#fcf8f1,#f8eef1,#f1eff8);
+    overflow-x:hidden;
+}
 
-        .hero {
-            padding: 160px 5% 80px 5%;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+button,
+input{
+    font-family:inherit;
+}
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-        }
+button{
+    cursor:pointer;
+}
 
-        .hero h1 span {
-            color: var(--primary-gold);
-            font-style: italic;
-        }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-        .hero p {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
+.container{
+    width:min(1160px,92%);
+    margin:auto;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 80px 20px;
-        }
+/* =========================================================
+   HEADER
+========================================================= */
 
-        .category-section {
-            margin-bottom: 60px;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,253,248,.90);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #eadfca;
+}
 
-        .category-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            color: var(--text-dark);
-        }
+.nav{
+    min-height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+.logo img{
+    width:auto;
+    height:52px;
+    display:block;
+}
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.nav-links{
+    display:flex;
+    gap:28px;
+    align-items:center;
+    font-size:14px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15);
-        }
+.nav-links a:hover{
+    color:#bd964c;
+}
 
-        .media-box {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            background: #f4f1ea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.instagram-button{
+    background:#713443;
+    color:white;
+    padding:12px 19px;
+    border-radius:30px;
+    font-size:13px;
+}
 
-        .media-box video, .media-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+/* =========================================================
+   HERO
+========================================================= */
 
-        .card-content {
-            padding: 20px;
-            text-align: center;
-        }
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding:90px 0;
+}
 
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+.hero-content{
+    max-width:850px;
+    margin:auto;
+}
 
-        .order-btn {
-            background-color: var(--primary-gold);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
+.eyebrow{
+    color:#bd984f;
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
 
-        .order-btn:hover {
-            background-color: var(--gold-hover);
-        }
+.hero h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:500;
+    font-size:clamp(48px,7vw,88px);
+    line-height:1;
+    margin-bottom:25px;
+}
 
-        /* Modal Popup Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
+.hero h1 span{
+    color:#c6a15b;
+    font-style:italic;
+}
 
-        .modal-content {
-            background: #FFFFFF;
-            padding: 30px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 420px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            position: relative;
-            text-align: center;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
+.hero p{
+    max-width:680px;
+    margin:auto;
+    line-height:1.8;
+    color:#756b6c;
+    font-size:17px;
+}
 
-        .modal-content h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-            font-size: 20px;
-        }
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:13px;
+    flex-wrap:wrap;
+}
 
-        .modal-instruction {
-            font-size: 13px;
-            color: var(--text-dark);
-            background: #FDFBF7;
-            border: 1px solid var(--border-color);
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            line-height: 1.5;
-            font-weight: 500;
-            text-align: left;
-        }
+.gold-btn{
+    display:inline-block;
+    border:0;
+    background:linear-gradient(135deg,#b38b47,#d4b267);
+    color:white;
+    padding:15px 26px;
+    border-radius:30px;
+    font-weight:bold;
+    box-shadow:0 12px 30px rgba(159,124,56,.18);
+}
 
-        .country-input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 14px;
-            margin-bottom: 15px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
+.white-btn{
+    display:inline-block;
+    background:#fffdf8;
+    border:1px solid #d8c79f;
+    color:#713443;
+    padding:14px 25px;
+    border-radius:30px;
+}
 
-        .country-input:focus {
-            border-color: var(--primary-gold);
-        }
+/* =========================================================
+   SECTION TITLES
+========================================================= */
 
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 20px;
-            cursor: pointer;
-            color: var(--text-muted);
-        }
+.section{
+    padding:90px 0;
+}
 
-        .submit-order-btn {
-            background-color: var(--primary-gold);
-            color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-order-btn:hover {
-            background-color: var(--gold-hover);
-        }
+.section-title{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 45px;
+}
 
-        /* Template List Items inside Modal */
-        .template-list-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            text-align: left;
-        }
+.section-title h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(38px,5vw,60px);
+    font-weight:500;
+    margin-bottom:15px;
+}
 
-        .template-item {
-            background: #FDFBF7;
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.2s;
-        }
+.section-title p{
+    color:#786d6d;
+    line-height:1.8;
+}
 
-        .template-item:hover {
-            border-color: var(--primary-gold);
-            background: #fff;
-        }
+/* =========================================================
+   DEMO CAROUSEL
+========================================================= */
 
-        .template-item span {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
+.demo-wrapper{
+    position:relative;
+}
 
-        .template-item button {
-            background: var(--primary-gold);
-            color: white;
-            border: none;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 11px;
-            cursor: pointer;
-        }
+.demo-track{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    padding:5px 3px 25px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 13px;
-        }
+.demo-track::-webkit-scrollbar{
+    display:none;
+}
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 34px; }
-            .nav-links { display: none; }
-        }
-    </style>
+.demo{
+    flex:0 0 280px;
+    height:390px;
+    border-radius:28px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    padding:25px;
+    color:white;
+    box-shadow:0 20px 45px rgba(55,40,40,.12);
+}
+
+.demo:after{
+    content:"";
+    position:absolute;
+    inset:45% 0 0;
+    background:linear-gradient(transparent,rgba(20,10,15,.75));
+}
+
+.demo-content{
+    position:relative;
+    z-index:2;
+}
+
+.demo h3{
+    font-family:Georgia,serif;
+    font-size:27px;
+    margin-bottom:6px;
+}
+
+.demo p{
+    font-size:13px;
+}
+
+.demo1{
+    background:linear-gradient(145deg,#d8c6b2,#775965);
+}
+
+.demo2{
+    background:linear-gradient(145deg,#e0b45c,#703d49);
+}
+
+.demo3{
+    background:linear-gradient(145deg,#dce5df,#a68e9e);
+}
+
+.demo4{
+    background:linear-gradient(145deg,#d8b3a5,#75505d);
+}
+
+.carousel-buttons{
+    text-align:center;
+}
+
+.carousel-buttons button{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:white;
+    border:1px solid #eadfca;
+    margin:4px;
+}
+
+/* =========================================================
+   CATEGORY CARDS
+========================================================= */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.category{
+    min-height:190px;
+    border:1px solid #eadfca;
+    border-radius:28px;
+    background:rgba(255,253,248,.88);
+    padding:28px;
+    text-align:left;
+    transition:.25s;
+    box-shadow:0 15px 35px rgba(70,50,45,.06);
+}
+
+.category:hover{
+    transform:translateY(-7px);
+    border-color:#c6a15b;
+    box-shadow:0 20px 40px rgba(70,50,45,.12);
+}
+
+.category-icon{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.category h3{
+    font-family:Georgia,serif;
+    font-size:23px;
+    font-weight:500;
+}
+
+.category p{
+    color:#786d6d;
+    font-size:13px;
+    margin-top:8px;
+}
+
+/* =========================================================
+   TEMPLATE COLLECTION
+========================================================= */
+
+#templateSection{
+    display:none;
+    background:rgba(255,255,255,.28);
+}
+
+#templateSection.visible{
+    display:block;
+}
+
+.collection-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.collection-header h2{
+    font-family:Georgia,serif;
+    font-size:48px;
+    font-weight:500;
+}
+
+.collection-header p{
+    color:#786d6d;
+    margin-top:10px;
+}
+
+.template-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.template-card{
+    background:#fffdf9;
+    border:1px solid #eadfca;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(60,40,40,.07);
+}
+
+.template-media{
+    height:390px;
+    position:relative;
+    background:#eee7df;
+    overflow:hidden;
+}
+
+.template-media img,
+.template-media video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.template-placeholder{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:flex-end;
+    padding:25px;
+    color:white;
+    font-family:Georgia,serif;
+    font-size:27px;
+    background:linear-gradient(145deg,#d6c2af,#775764);
+}
+
+.select-overlay{
+    position:absolute;
+    inset:0;
+    border:0;
+    background:transparent;
+}
+
+.template-info{
+    padding:20px;
+}
+
+.template-info h3{
+    font-family:Georgia,serif;
+    font-size:22px;
+    font-weight:500;
+}
+
+.template-info p{
+    color:#786d6d;
+    font-size:13px;
+    line-height:1.6;
+    margin:8px 0 16px;
+}
+
+.template-actions{
+    display:flex;
+    gap:9px;
+}
+
+.template-actions button{
+    flex:1;
+    border-radius:12px;
+    padding:12px;
+}
+
+.select-button{
+    background:white;
+    border:1px solid #ddceb1;
+}
+
+.customize-button{
+    background:#713443;
+    color:white;
+    border:0;
+}
+
+/* =========================================================
+   BUILD YOUR INVITATION
+========================================================= */
+
+.build-box{
+    background:rgba(255,253,248,.85);
+    border:1px solid #eadfca;
+    border-radius:38px;
+    padding:60px 35px;
+    box-shadow:0 20px 55px rgba(50,35,30,.07);
+}
+
+.blocks{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.block{
+    border:1px solid #eadfca;
+    background:white;
+    border-radius:22px;
+    padding:25px 15px;
+    text-align:center;
+    transition:.2s;
+}
+
+.block:hover,
+.block.selected{
+    border-color:#c6a15b;
+    background:#fff8e9;
+}
+
+.block-icon{
+    font-size:29px;
+}
+
+.block h4{
+    margin-top:11px;
+    font-size:16px;
+}
+
+.block p{
+    font-size:12px;
+    color:#786d6d;
+    margin-top:6px;
+}
+
+.selected-blocks{
+    text-align:center;
+    margin-top:25px;
+    color:#786d6d;
+    font-size:13px;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid #e4dac8;
+}
+
+.faq-question{
+    width:100%;
+    border:0;
+    background:transparent;
+    padding:23px 5px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    text-align:left;
+    font-size:16px;
+    color:#30252a;
+}
+
+.faq-question span:last-child{
+    font-size:24px;
+    color:#bd984f;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 5px 23px;
+    color:#786d6d;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.faq-item.open .faq-answer{
+    display:block;
+}
+
+/* =========================================================
+   ABOUT / PORTFOLIO / REVIEWS / PROCESS
+========================================================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.info-card{
+    border:1px solid #eadfca;
+    border-radius:28px;
+    padding:32px;
+    background:rgba(255,253,248,.9);
+}
+
+.info-card:nth-child(2){
+    background:#f8edef;
+}
+
+.info-card:nth-child(3){
+    background:#efedf8;
+}
+
+.info-card:nth-child(4){
+    background:#edf2eb;
+}
+
+.info-card h3{
+    font-family:Georgia,serif;
+    font-size:28px;
+    font-weight:500;
+    margin:7px 0 15px;
+}
+
+.info-card p{
+    color:#716769;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.process-list{
+    padding-left:20px;
+    color:#716769;
+    line-height:2;
+    font-size:14px;
+}
+
+/* =========================================================
+   PRICING
+========================================================= */
+
+.pricing{
+    margin-top:20px;
+    text-align:center;
+    padding:45px 25px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#f7e9eb,#eeeafa);
+    border:1px solid #eadfca;
+}
+
+.pricing h3{
+    font-family:Georgia,serif;
+    font-size:30px;
+    font-weight:500;
+    margin:8px 0 10px;
+}
+
+.pricing p{
+    color:#786d6d;
+    margin-bottom:25px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box{
+    text-align:center;
+    border-radius:38px;
+    padding:70px 20px;
+    border:1px solid #eadfca;
+    background:linear-gradient(135deg,#f6e4e8,#e9e5f6);
+}
+
+.contact-box h2{
+    font-family:Georgia,serif;
+    font-size:55px;
+    font-weight:500;
+}
+
+.contact-box p{
+    color:#786d6d;
+    margin:15px 0;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    text-align:center;
+    padding:35px;
+    color:#887b78;
+    font-size:12px;
+}
+
+/* =========================================================
+   ORDER MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:200;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(30,23,24,.72);
+    backdrop-filter:blur(8px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(760px,100%);
+    background:#fff;
+    border-radius:40px;
+    padding:45px;
+    position:relative;
+    max-height:92vh;
+    overflow:auto;
+    box-shadow:0 30px 90px rgba(0,0,0,.3);
+}
+
+.close-modal{
+    position:absolute;
+    right:25px;
+    top:15px;
+    border:0;
+    background:none;
+    font-size:38px;
+    color:#777;
+}
+
+.modal-title{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-size:48px;
+    font-weight:500;
+}
+
+.selected-name{
+    text-align:center;
+    color:#c3a05d;
+    font-size:19px;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+.instructions{
+    border:2px solid #eeeae4;
+    border-radius:23px;
+    padding:25px;
+    line-height:1.9;
+    margin-bottom:20px;
+    background:#fdfcf9;
+}
+
+.country{
+    width:100%;
+    border:2px solid #ebe5dc;
+    padding:18px;
+    border-radius:18px;
+    font-size:16px;
+    outline:none;
+    margin-bottom:15px;
+}
+
+.country:focus{
+    border-color:#c6a15b;
+}
+
+.copy-button{
+    width:100%;
+    border:0;
+    border-radius:17px;
+    background:#c8a45b;
+    color:white;
+    padding:18px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,20px);
+    opacity:0;
+    z-index:500;
+    background:#30252a;
+    color:white;
+    padding:13px 22px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .category-grid,
+    .template-grid,
+    .blocks{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .logo img{
+        height:42px;
+    }
+
+    .instagram-button{
+        padding:10px 13px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .section{
+        padding:65px 0;
+    }
+
+    .category-grid,
+    .template-grid,
+    .blocks{
+        grid-template-columns:1fr;
+    }
+
+    .template-media{
+        height:340px;
+    }
+
+    .build-box{
+        padding:40px 18px;
+    }
+
+    .modal-box{
+        padding:40px 20px 25px;
+        border-radius:30px;
+    }
+
+    .modal-title{
+        font-size:38px;
+    }
+
+    .contact-box h2{
+        font-size:42px;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
 
-    <header>
-        <div class="logo">IvoryVows</div>
-        <ul class="nav-links">
-            <li><a onclick="openCategoryModal('Video Wedding Invites', 'wedding')">Wedding Invites</a></li>
-            <li><a onclick="openCategoryModal('Wedding Website Invites', 'websites')">Website Invites</a></li>
-            <li><a onclick="openCategoryModal('Baby Shower Invitation', 'babyshower')">Baby Shower</a></li>
-            <li><a onclick="openCategoryModal('Birthday Invitation', 'birthday')">Birthday</a></li>
-        </ul>
-    </header>
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
-    <section class="hero">
-        <h1>Royal & Aesthetic Digital <span>Invitations</span></h1>
-        <p>Explore exquisitely crafted video invites and websites for your unforgettable moments.</p>
-    </section>
+<header>
 
-    <div class="container">
-        
-        <!-- SECTION 1: Video Wedding Invites -->
-        <div class="category-section" id="wedding">
-            <h2 class="category-title">Video Wedding Invites</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-holding-hands-41772-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Classic Royal Gold Wedding</div>
-                        <button class="order-btn" onclick="openCategoryModal('Video Wedding Invites', 'wedding')">View Templates & Order</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-happy-bride-and-groom-in-nature-41774-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Floral Elegance Invitation</div>
-                        <button class="order-btn" onclick="openCategoryModal('Video Wedding Invites', 'wedding')">View Templates & Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container nav">
 
-        <!-- SECTION 2: Wedding Website Invites -->
-        <div class="category-section" id="websites">
-            <h2 class="category-title">Wedding Website Invites</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" alt="Website Preview">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Interactive Story Web Template</div>
-                        <button class="order-btn" onclick="openCategoryModal('Wedding Website Invites', 'websites')">View Templates & Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<a href="#home" class="logo">
+    <img src="logo.PNG" alt="Ivory Vows">
+</a>
 
-        <!-- SECTION 3: Baby Shower Invitation -->
-        <div class="category-section" id="babyshower">
-            <h2 class="category-title">Baby Shower Invitation</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-baby-feet-in-mother-s-hands-42790-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Little Prince Baby Shower</div>
-                        <button class="order-btn" onclick="openCategoryModal('Baby Shower Invitation', 'babyshower')">View Templates & Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<nav class="nav-links">
+    <a href="#templates">Templates</a>
+    <a href="#build">Build Your Invitation</a>
+    <a href="#faq">FAQ</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-        <!-- SECTION 4: Birthday Invitation -->
-        <div class="category-section" id="birthday">
-            <h2 class="category-title">Birthday Invitation</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="media-box">
-                        <video controls poster="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80">
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-sparklers-celebrating-41775-large.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Golden Sparkle Milestone Birthday</div>
-                        <button class="order-btn" onclick="openCategoryModal('Birthday Invitation', 'birthday')">View Templates & Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<a
+href="https://www.instagram.com/ivoryvows_invites/"
+target="_blank"
+class="instagram-button">
+Instagram ↗
+</a>
 
-    </div>
+</div>
 
-    <!-- Order Modal Popup -->
-    <div class="modal" id="orderModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
-            <h3 id="modalHeading">Select Template</h3>
-            <div id="modalBodyContent">
-                <!-- Dynamic content (Template list or Country form) will load here -->
-            </div>
-        </div>
-    </div>
+</header>
 
-    <footer>
-        <p>&copy; 2026 IvoryVows. All Rights Reserved.</p>
-    </footer>
 
-    <script>
-        // Categories ke andar templates ki list
-        const categoryTemplates = {
-            'wedding': [
-                "Classic Royal Gold Wedding Video",
-                "Floral Elegance Wedding Video",
-                "Traditional Mandap Cinematic Invite"
-            ],
-            'websites': [
-                "Interactive Story Web Template",
-                "Minimalist Floral Wedding Web",
-                "Royal Palace Web Design"
-            ],
-            'babyshower': [
-                "Little Prince Baby Shower",
-                "Pastel Dreams Shower Video"
-            ],
-            'birthday': [
-                "Golden Sparkle Milestone Birthday",
-                "Party Confetti Celebration Video"
-            ]
-        };
+<main id="home">
 
-        let selectedTemplateName = "";
 
-        function openCategoryModal(categoryTitle, categoryKey) {
-            document.getElementById('modalHeading').innerText = categoryTitle;
-            const bodyContent = document.getElementById('modalBodyContent');
-            
-            const templates = categoryTemplates[categoryKey] || ["Custom Design Template"];
-            
-            let html = `<p style="font-size:13px; color:#666; margin-bottom:12px; text-align:left;">Apni pasand ka design select karein:</p><div class="template-list-container">`;
-            
-            templates.forEach(template => {
-                html += `
-                    <div class="template-item" onclick="selectTemplate('${template}')">
-                        <span>✨ ${template}</span>
-                        <button>Select</button>
-                    </div>
-                `;
-            });
-            
-            html += `</div>`;
-            bodyContent.innerHTML = html;
-            document.getElementById('orderModal').style.display = 'flex';
-        }
+<!-- ======================================================
+     HERO
+====================================================== -->
 
-        function selectTemplate(templateName) {
-            selectedTemplateName = templateName;
-            const bodyContent = document.getElementById('modalBodyContent');
+<section class="hero">
 
-            bodyContent.innerHTML = `
-                <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; margin-bottom: 10px; text-align: left;">Selected: ${templateName}</p>
-                <div class="modal-instruction">
-                    1. Apna country name neche type karein.<br>
-                    2. Click copy & open Instagram.<br>
-                    3. DM mein message paste kar dein.
-                </div>
-                <input type="text" id="userCountry" class="country-input" placeholder="Enter your Country (e.g. UAE, UK, USA)">
-                <button class="submit-order-btn" onclick="copyAndOpenInstagram()">Copy Message & Open Instagram</button>
-            `;
-        }
+<div class="container hero-content">
 
-        function closeOrderModal() {
-            document.getElementById('orderModal').style.display = 'none';
-        }
+<p class="eyebrow">
+    IVORY VOWS · DIGITAL INVITATIONS
+</p>
 
-        function copyAndOpenInstagram() {
-            let country = document.getElementById('userCountry').value.trim();
-            if (country === "") {
-                alert("Please enter your country first!");
-                document.getElementById('userCountry').focus();
-                return;
-            }
+<h1>
+    Your Story Deserves<br>
+    <span>a Beautiful Invitation.</span>
+</h1>
 
-            let instaUsername = "ivoryvows_invites"; 
-            let textToCopy = `Hi, I want to order "${selectedTemplateName}". My country is ${country}. Please send me prices and details.`;
+<p>
+    Discover elegant digital invitations designed to make
+    your special moments even more memorable. From dreamy
+    weddings and birthdays to baby showers, festivals and
+    everything in between — find a design that feels like you.
+</p>
 
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Message copied! Now open Instagram DM and paste it.");
-            }).catch(err => {
-                console.log('Failed to copy', err);
-            });
+<div class="buttons">
 
-            setTimeout(() => {
-                window.location.href = `https://www.instagram.com/${instaUsername}/`;
-            }, 500);
-            
-            closeOrderModal();
-        }
-    </script>
+<a href="#templates" class="gold-btn">
+    Explore Invitations
+</a>
+
+<a href="#build" class="white-btn">
+    Build Your Invitation
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     DEMO CAROUSEL
+====================================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<p class="eyebrow">
+    A LITTLE PREVIEW
+</p>
+
+<h2>
+    Made to Make an Impression
+</h2>
+
+<p>
+    Take a little look at some of our invitation styles.
+    Every design is created with elegance, detail and your
+    special occasion in mind.
+</p>
+
+</div>
+
+
+<div class="demo-track" id="demoTrack">
+
+<div class="demo demo1">
+<div class="demo-content">
+<h3>Timeless Wedding</h3>
+<p>Elegant · Romantic · Personal</p>
+</div>
+</div>
+
+<div class="demo demo2">
+<div class="demo-content">
+<h3>Golden Birthday</h3>
+<p>Chic · Fun · Celebration</p>
+</div>
+</div>
+
+<div class="demo demo3">
+<div class="demo-content">
+<h3>Little Love</h3>
+<p>Soft · Sweet · Dreamy</p>
+</div>
+</div>
+
+<div class="demo demo4">
+<div class="demo-content">
+<h3>Festive Glow</h3>
+<p>Joy · Colour · Celebration</p>
+</div>
+</div>
+
+</div>
+
+
+<div class="carousel-buttons">
+
+<button onclick="moveDemo(-1)">
+←
+</button>
+
+<button onclick="moveDemo(1)">
+→
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CATEGORIES
+====================================================== -->
+
+<section class="section" id="templates">
+
+<div class="container">
+
+<div class="section-title">
+
+<p class="eyebrow">
+    CHOOSE YOUR CELEBRATION
+</p>
+
+<h2>
+    Find Your Perfect Invitation
+</h2>
+
+<p>
+    Choose a category below and explore all the designs
+    available for that occasion.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+
+<button
+class="category"
+onclick="openCategory('weddingWebsite')">
+
+<div class="category-icon">🤍</div>
+
+<h3>
+Wedding Website Invite
+</h3>
+
+<p>
+Elegant digital wedding websites
+</p>
+
+</button>
+
+
+
+<button
+class="category"
+onclick="openCategory('weddingVideo')">
+
+<div class="category-icon">💍</div>
+
+<h3>
+Wedding Video Invite
+</h3>
+
+<p>
+Romantic animated wedding invitations
+</p>
+
+</button>
+
+
+
+<button
+class="category"
+onclick="openCategory('birthday')">
+
+<div class="category-icon">🎂</div>
+
+<h3>
+Birthday Video Invite
+</h3>
+
+<p>
+Fun and beautiful birthday invitations
+</p>
+
+</button>
+
+
+
+<button
+class="category"
+onclick="openCategory('babyShower')">
+
+<div class="category-icon">🍼</div>
+
+<h3>
+Baby Shower Video Invite
+</h3>
+
+<p>
+Sweet invitations for your little celebration
+</p>
+
+</button>
+
+
+
+<button
+class="category"
+onclick="openCategory('festival')">
+
+<div class="category-icon">✨</div>
+
+<h3>
+Festivals Video Invite
+</h3>
+
+<p>
+Beautiful invitations for festive moments
+</p>
+
+</button>
+
+
+
+<button
+class="category"
+onclick="openCategory('others')">
+
+<div class="category-icon">🌸</div>
+
+<h3>
+Others
+</h3>
+
+<p>
+Engagements, anniversaries and more
+</p>
+
+</button>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     TEMPLATE COLLECTION
+====================================================== -->
+
+<section
+class="section"
+id="templateSection">
+
+<div class="container">
+
+<div class="collection-header">
+
+<p class="eyebrow">
+    OUR COLLECTION
+</p>
+
+<h2 id="collectionTitle">
+    Your Templates
+</h2>
+
+<p id="collectionDescription">
+    Choose a design below.
+</p>
+
+</div>
+
+
+<div
+class="template-grid"
+id="templateGrid">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     BUILD YOUR INVITATION
+====================================================== -->
+
+<section class="section" id="build">
+
+<div class="container">
+
+<div class="build-box">
+
+<div class="section-title">
+
+<p class="eyebrow">
+    BUILD YOUR INVITATION
+</p>
+
+<h2>
+    Choose Your Information Blocks
+</h2>
+
+<p>
+    Select the sections you would like to include in your
+    invitation. You can choose as many as you need.
+</p>
+
+</div>
+
+
+<div class="blocks" id="blocksContainer">
+</div>
+
+
+<div class="selected-blocks"
+id="selectedBlocks">
+No blocks selected yet.
+</div>
+
+
+<div class="buttons">
+
+<button
+class="gold-btn"
+onclick="openOrder('Custom Invitation')">
+
+Customize My Invitation ✦
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     FAQ
+====================================================== -->
+
+<section class="section" id="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<p class="eyebrow">
+    QUESTIONS, ANSWERED
+</p>
+
+<h2>
+    Frequently Asked Questions
+</h2>
+
+<p>
+    Everything you may want to know before ordering
+    your Ivory Vows invitation.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+How do I place an order?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+To place an order, simply explore our invitation
+categories and choose the design you love. Click
+“Customize” on your chosen invitation, enter your
+country and click “Copy Message & Open Instagram”.
+Your message will be copied automatically and
+Instagram will open so you can send it to us in DM.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+Can I customize my invitation?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes! We love making each invitation personal.
+Once you select your template, you can send us
+your event details and customization requirements
+through Instagram DM. We will guide you through
+what information we need and confirm the details
+before creating your invitation.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+What information do I need to provide?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Depending on your invitation, you may need to provide
+your names, event date, time, venue, RSVP details,
+photos, wording, colours and any other information
+you would like included. We will tell you exactly
+what is needed after you place your order.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+How long does the order take?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Once your payment is confirmed and we have received
+all the required information from you, your digital
+invitation will be delivered within 2 days.
+
+To avoid delays, we recommend sending all your
+details together and checking them carefully before
+submission.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+How does payment work?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+First choose the invitation you want and contact us
+through Instagram. We will ask for your country and
+share the applicable pricing and payment details.
+Once payment is confirmed, we begin preparing your
+invitation.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+Can I add things like a countdown or map?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Absolutely. Our Build Your Invitation section includes
+additional information blocks such as Countdown,
+Venue & Map, Our Story, Timeline, Dress Code, Menu,
+Transport, Hotels, Gift Registry, FAQ, Photo Gallery
+and Custom Section. You can choose the sections you
+would like included.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+Do you make invitations for events other than weddings?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes. Ivory Vows is not only for weddings. We also
+create invitations for birthdays, baby showers,
+engagements, anniversaries, festivals and other
+special celebrations. If you have a specific idea,
+feel free to message us and we can discuss it with you.
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question"
+onclick="toggleFAQ(this)">
+
+<span>
+How do I know the price for my country?
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Our pricing can vary depending on the country and
+the selected invitation/design. Simply DM us your
+country on Instagram along with the template you
+are interested in and we will share the current
+pricing and order details with you.
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     ABOUT / PORTFOLIO / REVIEWS / PROCESS
+====================================================== -->
+
+<section class="section" id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<p class="eyebrow">
+    MORE FROM IVORY VOWS
+</p>
+
+<h2>
+    A Little More About Us
+</h2>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<!-- PORTFOLIO -->
+
+<div class="info-card">
+
+<p class="eyebrow">
+PORTFOLIO
+</p>
+
+<h3>
+A Collection Made With Love
+</h3>
+
+<p>
+
+Our portfolio is a collection of digital invitations
+created for life's most beautiful celebrations.
+
+From sophisticated wedding invitations and dreamy
+floral designs to playful birthday videos and sweet
+baby shower invitations, every design is created to
+feel special.
+
+We believe an invitation is more than just information.
+It is the first little glimpse your guests receive
+of your celebration.
+
+</p>
+
+<br>
+
+<a href="#templates" class="gold-btn">
+Explore Portfolio
+</a>
+
+</div>
+
+
+
+<!-- REVIEWS -->
+
+<div class="info-card">
+
+<p class="eyebrow">
+REVIEWS
+</p>
+
+<h3>
+Kind Words From Our Clients
+</h3>
+
+<p>
+
+“Absolutely loved my invitation! It looked even
+more beautiful than I imagined. The details were
+perfect and the whole process was so easy.”
+
+</p>
+
+<br>
+
+<p>
+
+“The video invitation was gorgeous. Everyone who
+received it asked where I got it from!”
+
+</p>
+
+<br>
+
+<p>
+
+“I wanted something elegant but personal and Ivory
+Vows understood exactly what I wanted. So happy
+with the final result.”
+
+</p>
+
+</div>
+
+
+
+<!-- ABOUT -->
+
+<div class="info-card">
+
+<p class="eyebrow">
+ABOUT IVORY VOWS
+</p>
+
+<h3>
+Created For Your Most Beautiful Moments
+</h3>
+
+<p>
+
+Ivory Vows is a digital invitation studio focused
+on creating elegant, thoughtful and memorable
+invitations for life's special occasions.
+
+We started with a simple idea: your invitation
+should feel just as special as the event itself.
+
+Instead of a standard invitation that simply gives
+your guests the date and venue, we love creating
+something that sets the mood and gives them a
+little feeling of what is to come.
+
+</p>
+
+<br>
+
+<p>
+
+Our designs are created with attention to typography,
+movement, colours, details and the overall experience.
+Whether you prefer something minimal and elegant,
+romantic and floral, luxurious and royal, or cute
+and playful, we want your invitation to feel like
+it belongs to your celebration.
+
+</p>
+
+<br>
+
+<p>
+
+Most importantly, we believe in keeping the ordering
+process simple and personal. You choose the design,
+send us your details, and we take care of turning
+those details into a beautiful digital invitation.
+
+</p>
+
+</div>
+
+
+
+<!-- PROCESS -->
+
+<div class="info-card">
+
+<p class="eyebrow">
+OUR PROCESS
+</p>
+
+<h3>
+Simple From Start To Finish
+</h3>
+
+<ol class="process-list">
+
+<li>
+Browse our invitation collections.
+</li>
+
+<li>
+Choose the design you love.
+</li>
+
+<li>
+Click Customize and enter your country.
+</li>
+
+<li>
+Copy the prepared message and open Instagram.
+</li>
+
+<li>
+Send the message to
+<strong>@ivoryvows_invites</strong>.
+</li>
+
+<li>
+We will send you the pricing and payment details
+for your country and selected design.
+</li>
+
+<li>
+Confirm your payment.
+</li>
+
+<li>
+Send us all the information required for your
+invitation.
+</li>
+
+<li>
+We create your invitation and deliver it within
+<strong>2 days</strong> after payment confirmation
+and receipt of all required details.
+</li>
+
+</ol>
+
+</div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     PRICING
+====================================================== -->
+
+<div class="pricing">
+
+<p class="eyebrow">
+PRICING
+</p>
+
+<h3>
+Your Invitation, Your Celebration.
+</h3>
+
+<p>
+
+Pricing may vary depending on your country,
+selected template and customization requirements.
+
+</p>
+
+<p>
+
+<strong>
+DM your country on Instagram for the current price.
+</strong>
+
+</p>
+
+<a
+href="https://www.instagram.com/ivoryvows_invites/"
+target="_blank"
+class="gold-btn">
+
+DM @ivoryvows_invites
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CONTACT
+====================================================== -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<p class="eyebrow">
+LET'S CREATE SOMETHING BEAUTIFUL
+</p>
+
+<h2>
+Contact Ivory Vows
+</h2>
+
+<p>
+Have a question, custom idea or found a design you love?
+We would love to hear from you.
+</p>
+
+
+<div class="buttons">
+
+<a
+href="https://www.instagram.com/ivoryvows_invites/"
+target="_blank"
+class="gold-btn">
+
+Instagram @ivoryvows_invites ↗
+
+</a>
+
+
+<!-- CHANGE THIS EMAIL -->
+
+<a
+href="mailto:YOUR-EMAIL@example.com"
+class="white-btn">
+
+Email Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+© 2026 Ivory Vows · Digital Invitations · Made With Love ♡
+
+</footer>
+
+
+
+<!-- ======================================================
+     ORDER POPUP
+====================================================== -->
+
+<div
+class="modal"
+id="orderModal">
+
+<div class="modal-box">
+
+<button
+class="close-modal"
+onclick="closeOrder()">
+
+×
+
+</button>
+
+
+<p class="eyebrow"
+style="text-align:center">
+
+YOUR IVORY VOWS ORDER
+
+</p>
+
+
+<h2
+class="modal-title">
+
+Birthday Invitation
+
+</h2>
+
+
+<p
+class="selected-name"
+id="selectedName">
+
+Selected: Golden Sparkle Milestone Birthday
+
+</p>
+
+
+<div class="instructions">
+
+<div>
+1. Apna country name neeche type karein.
+</div>
+
+<div>
+2. Click copy & open Instagram.
+</div>
+
+<div>
+3. DM mein message paste kar dein.
+</div>
+
+</div>
+
+
+<input
+class="country"
+id="countryInput"
+type="text"
+placeholder="Enter your Country (e.g. UAE, UK, USA)"
+>
+
+
+<button
+class="copy-button"
+onclick="copyAndOpenInstagram()">
+
+Copy Message & Open Instagram
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<div
+class="toast"
+id="toast">
+
+Message copied ♡
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   IVORY VOWS — COMPLETE JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+const INSTAGRAM =
+"https://www.instagram.com/ivoryvows_invites/";
+
+
+
+/* =========================================================
+   ALL INVITATION COLLECTIONS
+========================================================= */
+
+const collections = {
+
+
+weddingWebsite:{
+
+title:"Wedding Website Invitations",
+
+description:
+"Explore all our elegant wedding website invitation designs.",
+
+items:[
+
+{
+name:"Pearl Garden Wedding Website",
+description:"Elegant botanical wedding website",
+type:"image",
+src:"assets/templates/wedding-website-1.jpg"
+},
+
+{
+name:"Ivory Romance Wedding Website",
+description:"Minimal luxury wedding website",
+type:"image",
+src:"assets/templates/wedding-website-2.jpg"
+},
+
+{
+name:"Golden Vows Wedding Website",
+description:"Classic royal gold wedding website",
+type:"image",
+src:"assets/templates/wedding-website-3.jpg"
+}
+
+]
+
+},
+
+
+
+weddingVideo:{
+
+title:"Wedding Video Invitations",
+
+description:
+"Romantic animated wedding invitations for your special day.",
+
+items:[
+
+{
+name:"Forever Begins Wedding Video",
+description:"Romantic cinematic wedding invitation",
+type:"video",
+src:"assets/videos/wedding-1.mp4"
+},
+
+{
+name:"Golden Vows Wedding Video",
+description:"Luxury gold animated wedding invitation",
+type:"video",
+src:"assets/videos/wedding-2.mp4"
+},
+
+{
+name:"Garden Love Wedding Video",
+description:"Soft floral romantic wedding video",
+type:"video",
+src:"assets/videos/wedding-3.mp4"
+}
+
+]
+
+},
+
+
+
+birthday:{
+
+title:"Birthday Video Invitations",
+
+description:
+"Fun, elegant and beautiful birthday invitation videos.",
+
+items:[
+
+{
+name:"Golden Sparkle Milestone Birthday",
+description:"Luxury milestone birthday invitation",
+type:"video",
+src:"assets/videos/birthday-1.mp4"
+},
+
+{
+name:"Birthday Bloom Video Invite",
+description:"Pretty floral birthday invitation",
+type:"video",
+src:"assets/videos/birthday-2.mp4"
+},
+
+{
+name:"Little Celebration Birthday Video",
+description:"Cute and playful birthday video",
+type:"video",
+src:"assets/videos/birthday-3.mp4"
+}
+
+]
+
+},
+
+
+
+babyShower:{
+
+title:"Baby Shower Video Invitations",
+
+description:
+"Sweet and dreamy invitations for your little celebration.",
+
+items:[
+
+{
+name:"Little Love Baby Shower",
+description:"Soft and sweet baby shower invitation",
+type:"video",
+src:"assets/videos/baby-1.mp4"
+},
+
+{
+name:"Baby Bloom Shower Video",
+description:"Floral baby shower invitation",
+type:"video",
+src:"assets/videos/baby-2.mp4"
+},
+
+{
+name:"Twinkle Baby Shower Video",
+description:"Dreamy stars and moon baby shower",
+type:"video",
+src:"assets/videos/baby-3.mp4"
+}
+
+]
+
+},
+
+
+
+festival:{
+
+title:"Festivals Video Invitations",
+
+description:
+"Celebrate your special festival with a beautiful digital invite.",
+
+items:[
+
+{
+name:"Festive Glow Video Invite",
+description:"Elegant festive celebration invitation",
+type:"video",
+src:"assets/videos/festival-1.mp4"
+},
+
+{
+name:"Golden Celebration Festival Invite",
+description:"Luxury golden festival invitation",
+type:"video",
+src:"assets/videos/festival-2.mp4"
+},
+
+{
+name:"Moonlight Festival Video",
+description:"Elegant evening celebration invitation",
+type:"video",
+src:"assets/videos/festival-3.mp4"
+}
+
+]
+
+},
+
+
+
+others:{
+
+title:"Other Celebration Invitations",
+
+description:
+"Beautiful digital invitations for all your other special moments.",
+
+items:[
+
+{
+name:"Forever Us Anniversary Video",
+description:"Romantic anniversary invitation",
+type:"video",
+src:"assets/videos/other-1.mp4"
+},
+
+{
+name:"Engagement Bloom Video",
+description:"Elegant engagement invitation",
+type:"video",
+src:"assets/videos/other-2.mp4"
+},
+
+{
+name:"Special Day Celebration Invite",
+description:"Beautiful invitation for any celebration",
+type:"video",
+src:"assets/videos/other-3.mp4"
+}
+
+]
+
+}
+
+};
+
+
+
+/* =========================================================
+   OPEN CATEGORY
+========================================================= */
+
+function openCategory(category){
+
+const collection =
+collections[category];
+
+if(!collection){
+
+console.log("Category not found");
+
+return;
+
+}
+
+
+const section =
+document.getElementById("templateSection");
+
+const title =
+document.getElementById("collectionTitle");
+
+const description =
+document.getElementById("collectionDescription");
+
+const grid =
+document.getElementById("templateGrid");
+
+
+title.innerText =
+collection.title;
+
+description.innerText =
+collection.description +
+" Click any design to select it and place your order.";
+
+
+grid.innerHTML="";
+
+
+collection.items.forEach(item=>{
+
+
+const card =
+document.createElement("div");
+
+card.className =
+"template-card";
+
+
+/* MEDIA */
+
+const media =
+document.createElement("div");
+
+media.className =
+"template-media";
+
+
+if(item.type==="video"){
+
+const video =
+document.createElement("video");
+
+video.controls=true;
+
+video.muted=true;
+
+video.loop=true;
+
+video.playsInline=true;
+
+video.preload="metadata";
+
+
+const source =
+document.createElement("source");
+
+source.src=item.src;
+
+source.type="video/mp4";
+
+
+video.appendChild(source);
+
+media.appendChild(video);
+
+
+/* fallback if video isn't uploaded */
+
+video.onerror=function(){
+
+media.innerHTML="";
+
+const fallback =
+document.createElement("div");
+
+fallback.className =
+"template-placeholder";
+
+fallback.innerText =
+item.name;
+
+media.appendChild(fallback);
+
+};
+
+}
+
+
+else{
+
+const image =
+document.createElement("img");
+
+image.src=item.src;
+
+image.alt=item.name;
+
+
+image.onerror=function(){
+
+media.innerHTML="";
+
+const fallback =
+document.createElement("div");
+
+fallback.className =
+"template-placeholder";
+
+fallback.innerText =
+item.name;
+
+media.appendChild(fallback);
+
+};
+
+
+media.appendChild(image);
+
+}
+
+
+/* CLICK OVERLAY */
+
+const overlay =
+document.createElement("button");
+
+overlay.className =
+"select-overlay";
+
+overlay.onclick=function(){
+
+openOrder(item.name);
+
+};
+
+
+media.appendChild(overlay);
+
+
+/* INFORMATION */
+
+const info =
+document.createElement("div");
+
+info.className =
+"template-info";
+
+
+const heading =
+document.createElement("h3");
+
+heading.innerText =
+item.name;
+
+
+const paragraph =
+document.createElement("p");
+
+paragraph.innerText =
+item.description;
+
+
+const actions =
+document.createElement("div");
+
+actions.className =
+"template-actions";
+
+
+const select =
+document.createElement("button");
+
+select.className =
+"select-button";
+
+select.innerText =
+"Select";
+
+select.onclick=function(){
+
+openOrder(item.name);
+
+};
+
+
+const customize =
+document.createElement("button");
+
+customize.className =
+"customize-button";
+
+customize.innerText =
+"Customize";
+
+customize.onclick=function(){
+
+openOrder(item.name);
+
+};
+
+
+actions.appendChild(select);
+
+actions.appendChild(customize);
+
+
+info.appendChild(heading);
+
+info.appendChild(paragraph);
+
+info.appendChild(actions);
+
+
+card.appendChild(media);
+
+card.appendChild(info);
+
+
+grid.appendChild(card);
+
+});
+
+
+section.classList.add("visible");
+
+
+setTimeout(function(){
+
+section.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},100);
+
+}
+
+
+
+/* =========================================================
+   ORDER MODAL
+========================================================= */
+
+let selectedInvitation =
+"Golden Sparkle Milestone Birthday";
+
+
+function openOrder(name){
+
+selectedInvitation =
+name;
+
+
+document.getElementById("selectedName").innerText =
+"Selected: " + name;
+
+
+document.getElementById("countryInput").value="";
+
+
+document.getElementById("orderModal")
+.classList.add("show");
+
+
+document.body.style.overflow="hidden";
+
+
+setTimeout(function(){
+
+document.getElementById("countryInput").focus();
+
+},200);
+
+}
+
+
+
+function closeOrder(){
+
+document.getElementById("orderModal")
+.classList.remove("show");
+
+document.body.style.overflow="";
+
+}
+
+
+
+/* =========================================================
+   COPY MESSAGE + OPEN INSTAGRAM
+========================================================= */
+
+async function copyAndOpenInstagram(){
+
+const country =
+document.getElementById("countryInput")
+.value
+.trim();
+
+
+if(!country){
+
+alert("Please enter your country first.");
+
+return;
+
+}
+
+
+const message =
+
+`Hello Ivory Vows! ♡
+
+I’m interested in the "${selectedInvitation}" invitation.
+
+My country is: ${country}
+
+Please share the pricing and order details with me.
+
+Thank you! ♡`;
+
+
+try{
+
+await navigator.clipboard.writeText(message);
+
+}
+
+catch(error){
+
+const textarea =
+document.createElement("textarea");
+
+textarea.value=message;
+
+document.body.appendChild(textarea);
+
+textarea.select();
+
+document.execCommand("copy");
+
+textarea.remove();
+
+}
+
+
+/* show toast */
+
+const toast =
+document.getElementById("toast");
+
+toast.classList.add("show");
+
+
+setTimeout(function(){
+
+toast.classList.remove("show");
+
+},2000);
+
+
+/* open Instagram */
+
+setTimeout(function(){
+
+window.open(
+INSTAGRAM,
+"_blank"
+);
+
+},300);
+
+}
+
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================================= */
+
+document
+.getElementById("orderModal")
+.addEventListener("click",function(event){
+
+if(event.target===this){
+
+closeOrder();
+
+}
+
+});
+
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+
+closeOrder();
+
+}
+
+});
+
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+function toggleFAQ(button){
+
+const item =
+button.parentElement;
+
+
+const answer =
+item.querySelector(".faq-answer");
+
+
+const icon =
+button.querySelector("span:last-child");
+
+
+const currentlyOpen =
+item.classList.contains("open");
+
+
+/* close all */
+
+document
+.querySelectorAll(".faq-item")
+.forEach(function(faq){
+
+faq.classList.remove("open");
+
+faq.querySelector("span:last-child")
+.innerText="+";
+
+});
+
+
+/* open selected */
+
+if(!currentlyOpen){
+
+item.classList.add("open");
+
+icon.innerText="−";
+
+}
+
+}
+
+
+
+/* =========================================================
+   BUILD YOUR INVITATION BLOCKS
+========================================================= */
+
+const blocks=[
+
+{
+icon:"⏳",
+name:"Countdown",
+text:"Count down to your special day"
+},
+
+{
+icon:"📍",
+name:"Venue & Map",
+text:"Help guests find your venue"
+},
+
+{
+icon:"♡",
+name:"Our Story",
+text:"Share your beautiful journey"
+},
+
+{
+icon:"◷",
+name:"Timeline",
+text:"Show your event schedule"
+},
+
+{
+icon:"♧",
+name:"Dress Code",
+text:"Tell guests what to wear"
+},
+
+{
+icon:"⌁",
+name:"Menu",
+text:"Share your celebration menu"
+},
+
+{
+icon:"🚌",
+name:"Transport",
+text:"Make travel easier"
+},
+
+{
+icon:"⌂",
+name:"Hotels",
+text:"Recommend nearby hotels"
+},
+
+{
+icon:"🎁",
+name:"Gift Registry",
+text:"Share your gift preferences"
+},
+
+{
+icon:"?",
+name:"FAQ",
+text:"Answer guest questions"
+},
+
+{
+icon:"▧",
+name:"Photo Gallery",
+text:"Add your favourite memories"
+},
+
+{
+icon:"T",
+name:"Custom Section",
+text:"Create a section your way"
+}
+
+];
+
+
+let selectedBlocks=[];
+
+
+const blocksContainer =
+document.getElementById("blocksContainer");
+
+
+blocks.forEach(function(block){
+
+
+const element =
+document.createElement("button");
+
+element.className =
+"block";
+
+
+element.innerHTML=`
+
+<div class="block-icon">
+${block.icon}
+</div>
+
+<h4>
+${block.name}
+</h4>
+
+<p>
+${block.text}
+</p>
+
+`;
+
+
+element.onclick=function(){
+
+element.classList.toggle("selected");
+
+
+if(
+selectedBlocks.includes(block.name)
+){
+
+selectedBlocks =
+selectedBlocks.filter(
+function(item){
+return item!==block.name;
+}
+);
+
+}
+
+else{
+
+selectedBlocks.push(block.name);
+
+}
+
+
+updateSelectedBlocks();
+
+};
+
+
+blocksContainer.appendChild(element);
+
+});
+
+
+
+function updateSelectedBlocks(){
+
+const output =
+document.getElementById("selectedBlocks");
+
+
+if(selectedBlocks.length===0){
+
+output.innerText =
+"No blocks selected yet.";
+
+return;
+
+}
+
+
+output.innerText =
+"Selected: " +
+selectedBlocks.join(" · ");
+
+}
+
+
+
+/* =========================================================
+   DEMO CAROUSEL
+========================================================= */
+
+function moveDemo(direction){
+
+const track =
+document.getElementById("demoTrack");
+
+
+track.scrollBy({
+
+left:
+direction*320,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+
+</script>
+
 </body>
 </html>
