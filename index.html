@@ -336,7 +336,7 @@
                     </div>
                     <div class="card-content">
                         <div class="card-title">Little Prince Baby Shower</div>
-                        <button class="order-btn" onclick="openOrderModal('Little Prince Baby Shower')">Place Order via Insta DM</button>
+                        <button class="order-btn" onclick="openOrderModal('Little Prince Baby Shower')">Place Order via Insta DM Link</button>
                     </div>
                 </div>
             </div>
@@ -398,8 +398,8 @@
         function sendToInstagram() {
             let instaUsername = "ivoryvows_invites"; 
             
-            // Redirects directly to your Instagram profile
-            window.location.href = `https://www.instagram.com/${instaUsername}/`;
+            // Opens Instagram Direct Message (DM) chat window directly
+            window.location.href = `https://ig.me/m/${instaUsername}`;
             
             closeOrderModal();
         }
