@@ -15,7 +15,8 @@
             --text-dark: #2C2C2C;
             --text-muted: #6E6E6E;
             --border-color: #EFE0D5;
-            --shadow: 0 10px 30px rgba(197, 160, 89, 0.12);
+            --shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
+            --pill-bg: #FAF0EB;
         }
 
         * {
@@ -45,7 +46,7 @@
             z-index: 1;
         }
 
-        /* Header Layout matching reference */
+        /* Clean Header without icons */
         header {
             background: rgba(255, 246, 240, 0.95);
             backdrop-filter: blur(10px);
@@ -54,9 +55,9 @@
             top: 0; left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 12px 20px;
+            padding: 14px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -66,69 +67,63 @@
             object-fit: contain;
         }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .lang-btn {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-dark);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .menu-icon-btn {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            cursor: pointer;
-            color: var(--text-dark);
-        }
-
-        /* Main Wrapper */
-        .main-container {
-            padding: 110px 15px 40px 15px;
-            max-width: 600px;
+        /* Hero Section */
+        .hero {
+            padding: 120px 20px 10px 20px;
+            text-align: center;
+            max-width: 750px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
-            text-align: center;
         }
 
-        /* Category Tabs Grid */
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--primary-gold);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Category Selector Tabs */
         .category-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 20px;
             background: #FFFFFF;
-            padding: 12px;
-            border-radius: 20px;
+            padding: 10px;
+            border-radius: 18px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
         }
 
         .tab-btn {
-            background: #FAF0EB;
+            background: var(--pill-bg);
             border: 1px solid transparent;
-            padding: 10px;
-            border-radius: 14px;
-            font-size: 12px;
+            padding: 9px;
+            border-radius: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: var(--text-dark);
             cursor: pointer;
@@ -138,43 +133,43 @@
         .tab-btn.active {
             background: linear-gradient(135deg, #C5A059 0%, #B38F48 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
         }
 
         .instruction-text {
             font-size: 12px;
             color: var(--text-muted);
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        /* Carousel Slider Layout (Reference style) */
+        /* Carousel Slider Layout */
         .carousel-container {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 380px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             overflow: hidden;
         }
 
         .carousel-track {
             display: flex;
             align-items: center;
-            transition: transform 0.4s ease-in-out;
-            width: 100%;
-            position: relative;
-            height: 100%;
             justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
         .carousel-card {
             position: absolute;
-            width: 260px;
-            height: 380px;
+            width: 240px;
+            height: 340px;
             background: #FFFFFF;
-            border-radius: 20px;
+            border-radius: 18px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
             overflow: hidden;
@@ -182,10 +177,9 @@
             cursor: pointer;
         }
 
-        /* Card Positioning for 3D Flow effect */
         .carousel-card.prev {
-            transform: translateX(-160px) scale(0.85);
-            opacity: 0.6;
+            transform: translateX(-140px) scale(0.85);
+            opacity: 0.5;
             z-index: 1;
         }
 
@@ -193,12 +187,12 @@
             transform: translateX(0) scale(1);
             opacity: 1;
             z-index: 3;
-            box-shadow: 0 15px 35px rgba(197, 160, 89, 0.2);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);
         }
 
         .carousel-card.next {
-            transform: translateX(160px) scale(0.85);
-            opacity: 0.6;
+            transform: translateX(140px) scale(0.85);
+            opacity: 0.5;
             z-index: 1;
         }
 
@@ -208,44 +202,43 @@
 
         .card-media {
             width: 100%;
-            height: 270px;
+            height: 240px;
             position: relative;
             background: #f4f1ea;
         }
 
-        .card-media img, .card-media video {
+        .card-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Open Website Center Button on Media */
         .open-preview-btn {
             position: absolute;
-            bottom: 15px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             backdrop-filter: blur(4px);
             cursor: pointer;
         }
 
         .card-info {
-            padding: 15px;
+            padding: 12px;
             text-align: center;
         }
 
         .card-category-label {
-            font-size: 10px;
+            font-size: 9px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
@@ -254,20 +247,20 @@
 
         .card-heading {
             font-family: 'Playfair Display', serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--text-dark);
         }
 
-        /* Carousel Navigation Arrows */
+        /* Carousel Arrows */
         .carousel-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             background: white;
             border: 1px solid var(--border-color);
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -277,17 +270,18 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             color: var(--primary-gold);
             font-weight: bold;
+            font-size: 12px;
         }
 
-        .carousel-arrow.prev-arrow { left: 5px; }
-        .carousel-arrow.next-arrow { right: 5px; }
+        .carousel-arrow.prev-arrow { left: 2px; }
+        .carousel-arrow.next-arrow { right: 2px; }
 
         /* Dots Indicator */
         .dots-indicator {
             display: flex;
             justify-content: center;
             gap: 6px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .dot {
@@ -299,130 +293,224 @@
         }
 
         .dot.active {
-            width: 20px;
+            width: 18px;
             border-radius: 4px;
             background: var(--primary-gold);
         }
 
-        /* View All Samples Button */
-        .view-all-btn {
-            background: #FFFFFF;
-            border: 1px solid var(--primary-gold);
-            color: var(--primary-gold);
-            padding: 12px 25px;
-            border-radius: 30px;
+        /* Footer Columns Style */
+        .footer-nav-section {
+            background: #1c1c1c;
+            color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            margin-top: 40px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-col {
+            background: #252525;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #C5A059;
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        .footer-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .footer-links-list li a {
+            color: #b0b0b0;
+            text-decoration: none;
             font-size: 13px;
-            font-weight: 600;
+            transition: color 0.2s;
             cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            display: inline-flex;
+        }
+
+        .footer-links-list li a:hover {
+            color: #C5A059;
+        }
+
+        /* Connect Box Styles */
+        .connect-box {
+            background: #252525;
+            border: 1px solid #333;
+            padding: 25px 20px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 600px;
+            margin: 20px auto 0 auto;
+        }
+
+        .connect-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #C5A059;
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icon-btn {
+            width: 42px;
+            height: 42px;
+            background: #1c1c1c;
+            border: 1px solid #444;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .view-all-btn:hover {
-            background: var(--primary-gold);
+            justify-content: center;
             color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: border-color 0.2s;
         }
 
-        /* Modal Popup */
+        .social-icon-btn:hover {
+            border-color: #C5A059;
+        }
+
+        .email-display {
+            font-size: 13px;
+            color: #C5A059;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .email-desc {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 11px;
+            color: #888;
+            margin: 25px 0 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            padding-bottom: 10px;
+        }
+
+        /* Modal Customization */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(4px);
             justify-content: center;
             align-items: center;
-            z-index: 2000;
+            z-index: 2500;
         }
 
         .modal-content {
             background: #FFFFFF;
-            padding: 22px;
+            padding: 24px;
             border-radius: 18px;
             width: 90%;
-            max-width: 360px;
+            max-width: 380px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             position: relative;
-            text-align: center;
+            text-align: left;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
         .modal-content h3 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 10px;
-        }
-
-        .modal-instruction {
-            font-size: 11px;
-            color: var(--text-dark);
-            background: #FFF6F0;
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            border-radius: 8px;
+            color: var(--primary-gold);
             margin-bottom: 12px;
-            text-align: left;
-            line-height: 1.4;
-        }
-
-        .country-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 13px;
-            margin-bottom: 12px;
-            outline: none;
+            font-size: 18px;
+            text-align: center;
         }
 
         .close-modal {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 18px;
+            top: 12px;
+            right: 16px;
+            font-size: 20px;
             cursor: pointer;
             color: var(--text-muted);
         }
 
-        .submit-order-btn {
-            background-color: var(--primary-gold);
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
+        .modal-body-text {
+            font-size: 12px;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 11px;
-            margin-top: 20px;
+        .modal-body-text ul {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+
+        .modal-body-text li {
+            margin-bottom: 6px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header matching reference layout -->
+    <!-- Header without icons -->
     <header>
         <img src="logo.PNG" alt="IvoryVows Logo" class="header-logo" onerror="this.style.display='none'; document.getElementById('fallback-logo-text').style.display='block';">
         <span id="fallback-logo-text" style="display:none; font-family:'Playfair Display',serif; font-weight:700; color:var(--primary-gold); font-size:18px;">IvoryVows</span>
-        
-        <div class="header-right">
-            <div class="lang-btn">🌐 EN</div>
-            <div class="menu-icon-btn" onclick="alert('Menu options can be placed here!')">☰</div>
-        </div>
     </header>
 
-    <div class="main-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Invitations as special as the moment itself <span>designed to impress</span></h1>
+        <p>The best events don't start on the day—they start with the invitation.</p>
+    </section>
+
+    <div class="container">
         
-        <!-- Category Selector Tabs -->
+        <!-- Category Tabs -->
         <div class="category-tabs">
             <button class="tab-btn active" onclick="switchCategory('wedding-website')">Wedding Website</button>
             <button class="tab-btn" onclick="switchCategory('wedding-video')">Wedding Video</button>
@@ -430,53 +518,88 @@
             <button class="tab-btn" onclick="switchCategory('birthday-video')">Birthday Video</button>
         </div>
 
-        <p class="instruction-text">Choose a celebration format, then drag through the real samples. Tap the centre card to play or open a website.</p>
+        <p class="instruction-text">Choose a celebration format, then drag through the real samples. Tap the centre card to open or preview.</p>
 
         <!-- Carousel Slider Section -->
         <div class="carousel-container">
             <div class="carousel-arrow prev-arrow" onclick="prevCard()">❮</div>
-            
-            <div class="carousel-track" id="carouselTrack">
-                <!-- Cards will be dynamically loaded based on category -->
-            </div>
-
+            <div class="carousel-track" id="carouselTrack"></div>
             <div class="carousel-arrow next-arrow" onclick="nextCard()">❯</div>
         </div>
 
         <!-- Dots Pagination -->
         <div class="dots-indicator" id="dotsContainer"></div>
 
-        <!-- View All Samples Button -->
-        <button class="view-all-btn" onclick="openOrderModal('All Samples Catalog')">
-            View all samples →
-        </button>
-
     </div>
 
-    <!-- Order / Inquiry Modal -->
-    <div class="modal" id="orderModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
-            <h3>Place Your Order</h3>
-            <p style="font-size: 12px; color: var(--primary-gold); font-weight: 600; margin-bottom: 10px;" id="selectedProductText"></p>
+    <!-- Dark Footer / Navigation Grid -->
+    <footer class="footer-nav-section">
+        <div class="footer-grid">
             
-            <div class="modal-instruction">
-                1. Type your country below.<br>
-                2. Click copy & open Instagram.<br>
-                3. Paste the message in DM.
+            <!-- EXPLORE -->
+            <div class="footer-col">
+                <h4>EXPLORE</h4>
+                <ul class="footer-links-list">
+                    <li><a onclick="openInfoModal('Services', 'Our bespoke services include interactive digital wedding websites, personalized cinematic video invitations, custom RSVP tracking systems, and exclusive milestone celebration portals crafted with premium royal aesthetics.')">Services</a></li>
+                    <li><a onclick="openInfoModal('Portfolio', 'Explore our curated showcase of elite digital invitations. From grand royal palaces in Dubai & London to intimate destination beach weddings, every design tells a unique love story.')">Portfolio</a></li>
+                    <li><a onclick="openInfoModal('Reviews', 'Rated 5 stars by hundreds of couples worldwide! Read how our interactive invitations left guests spellbound right from the first click.')">Reviews</a></li>
+                </ul>
             </div>
 
-            <input type="text" id="userCountry" class="country-input" placeholder="Enter your Country (e.g. UAE, UK, USA)">
-            <button class="submit-order-btn" onclick="copyAndOpenInstagram()">Copy Message & Open Instagram</button>
+            <!-- INVITATIONS (Updated as requested) -->
+            <div class="footer-col">
+                <h4>INVITATIONS</h4>
+                <ul class="footer-links-list">
+                    <li><a onclick="filterAndScroll('wedding-website')">Wedding Website Invites</a></li>
+                    <li><a onclick="filterAndScroll('wedding-video')">Video Invites</a></li>
+                    <li><a onclick="filterAndScroll('birthday-website')">Birthday & Festival Invites</a></li>
+                </ul>
+            </div>
+
+            <!-- COMPANY -->
+            <div class="footer-col">
+                <h4>COMPANY</h4>
+                <ul class="footer-links-list">
+                    <li><a onclick="openInfoModal('About Us', 'IvoryVows is a premier boutique design studio dedicated to redefining celebration invitations. We blend elegance, storytelling, and cutting-edge technology to make your big day unforgettable.')">About</a></li>
+                    <li><a onclick="openInfoModal('Our Process', '<b>Step 1: Choose Your Design</b><br>Select from our exclusive templates or request a custom aesthetic.<br><br><b>Step 2: Share Details & Brief</b><br>Provide your event dates, gallery photos, and love story details.<br><br><b>Step 3: Review & Refine</b><br>We build your live interactive preview and fine-tune every touchpoint.<br><br><b>Step 4: Share & Celebrate</b><br>Send your magical link instantly to guests via Instagram or WhatsApp!')">Our Process</a></li>
+                    <li><a onclick="openInfoModal('Contact', 'Connect with us directly on Instagram @ivoryvows_invites or drop an email at worklovesolutions@gmail.com for custom inquiries.')">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- LET'S CONNECT BOX -->
+        <div class="connect-box">
+            <h4>LET'S CONNECT</h4>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ivoryvows_invites/" target="_blank" class="social-icon-btn">📷</a>
+                <a href="mailto:worklovesolutions@gmail.com" class="social-icon-btn">✉️</a>
+            </div>
+            <div class="email-display">worklovesolutions@gmail.com</div>
+            <div class="email-desc">Questions, custom themes or a fresh idea? We would love to hear it.</div>
+        </div>
+
+        <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a> · 
+            <a href="#">Terms & Conditions</a> · 
+            <a href="#">Cookie Policy</a>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 IvoryVows · Made with love</p>
+        </div>
+    </footer>
+
+    <!-- Info / Content Modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeInfoModal()">&times;</span>
+            <h3 id="modalTitle">Title</h3>
+            <div class="modal-body-text" id="modalBody">Content goes here...</div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 IvoryVows. All Rights Reserved.</p>
-    </footer>
-
     <script>
-        // Sample Data categorized
         const sampleData = {
             'wedding-website': [
                 { title: "Arabic Envelop", type: "Wedding Website", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" },
@@ -489,11 +612,11 @@
                 { title: "Floral Bloom Invite", type: "Wedding Video", img: "https://images.unsplash.com/photo-1545232979-fbf802c64838?auto=format&fit=crop&w=600&q=80" }
             ],
             'birthday-website': [
-                { title: "Golden Sparkle Milestone", type: "Birthday Website", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" },
-                { title: "Little Prince Celebration", type: "Birthday Website", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" }
+                { title: "Golden Sparkle Milestone", type: "Birthday & Festival", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" },
+                { title: "Little Prince Celebration", type: "Birthday & Festival", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" }
             ],
             'birthday-video': [
-                { title: "Party Confetti Blast", type: "Birthday Video", img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" }
+                { title: "Party Confetti Blast", type: "Birthday & Festival", img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" }
             ]
         };
 
@@ -503,12 +626,19 @@
         function switchCategory(category) {
             currentCategory = category;
             currentIndex = 0;
-            
-            // Update active tab styling
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
             
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                if(btn.textContent.toLowerCase().includes(category.replace('-', ' '))) {
+                    btn.classList.add('active');
+                }
+            });
             renderCarousel();
+        }
+
+        function filterAndScroll(categoryKey) {
+            switchCategory(categoryKey);
+            window.scrollTo({ top: 150, behavior: 'smooth' });
         }
 
         function renderCarousel() {
@@ -520,7 +650,6 @@
             const items = sampleData[currentCategory];
 
             items.forEach((item, index) => {
-                // Create Card
                 const card = document.createElement('div');
                 card.className = 'carousel-card';
                 
@@ -538,7 +667,7 @@
                 card.innerHTML = `
                     <div class="card-media">
                         <img src="${item.img}" alt="${item.title}">
-                        <button class="open-preview-btn" onclick="event.stopPropagation(); openOrderModal('${item.title}')">
+                        <button class="open-preview-btn" onclick="event.stopPropagation(); openInfoModal('${item.title}', 'Explore this exclusive template live! Contact us via Instagram to customize this with your names, venue details, and love story.')">
                             ▶ Open website
                         </button>
                     </div>
@@ -549,7 +678,6 @@
                 `;
                 track.appendChild(card);
 
-                // Create Dot
                 const dot = document.createElement('div');
                 dot.className = index === currentIndex ? 'dot active' : 'dot';
                 dot.onclick = () => { currentIndex = index; renderCarousel(); };
@@ -569,42 +697,16 @@
             renderCarousel();
         }
 
-        // Modal Functions
-        let currentProduct = "";
-        function openOrderModal(productName) {
-            currentProduct = productName;
-            document.getElementById('selectedProductText').innerText = "Selected: " + productName;
-            document.getElementById('userCountry').value = ""; 
-            document.getElementById('orderModal').style.display = 'flex';
+        function openInfoModal(title, contentHtml) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerHTML = contentHtml;
+            document.getElementById('infoModal').style.display = 'flex';
         }
 
-        function closeOrderModal() {
-            document.getElementById('orderModal').style.display = 'none';
+        function closeInfoModal() {
+            document.getElementById('infoModal').style.display = 'none';
         }
 
-        function copyAndOpenInstagram() {
-            let country = document.getElementById('userCountry').value.trim();
-            if (country === "") {
-                alert("Please enter your country first!");
-                document.getElementById('userCountry').focus();
-                return;
-            }
-
-            let instaUsername = "ivoryvows_invites"; 
-            let textToCopy = `Hi, I want to order/check "${currentProduct}". My country is ${country}. Please send me details.`;
-
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Message copied! Now open Instagram DM and paste it.");
-            });
-
-            setTimeout(() => {
-                window.location.href = `https://www.instagram.com/${instaUsername}/`;
-            }, 500);
-            
-            closeOrderModal();
-        }
-
-        // Initial Load
         renderCarousel();
     </script>
 </body>
