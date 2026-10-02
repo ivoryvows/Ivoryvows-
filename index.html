@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IvoryVows | Wedding Invitation Boutique</title>
+    <title>IvoryVows | Wedding & Celebration Invitations</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -16,7 +16,8 @@
             --text-muted: #6E6E6E;
             --border-color: #EFE0D5;
             --shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
-            --pill-bg: #FAF0EB;
+            --pill-bg: #F7EBE6;
+            --pill-border: #E8D5CC;
         }
 
         * {
@@ -67,22 +68,26 @@
             object-fit: contain;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 120px 20px 10px 20px;
-            text-align: center;
-            max-width: 750px;
+        .wrapper {
+            max-width: 500px;
             margin: 0 auto;
+            padding: 100px 20px 60px 20px;
             position: relative;
             z-index: 2;
         }
 
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             line-height: 1.3;
         }
 
@@ -97,20 +102,69 @@
             margin-bottom: 20px;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px 40px 20px;
-            position: relative;
-            z-index: 2;
+        /* Live Countdown Timer Banner */
+        .countdown-banner {
+            background: linear-gradient(135deg, #FAF0EB 0%, #F3E2D6 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
         }
 
-        /* Category Selector Tabs - Scrollable grid for 6 options */
+        .countdown-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .countdown-timers {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .time-box {
+            background: #FFFFFF;
+            padding: 6px 10px;
+            border-radius: 10px;
+            min-width: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .time-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .time-label {
+            font-size: 9px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        /* Category Filter Tabs */
         .category-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             background: #FFFFFF;
             padding: 12px;
             border-radius: 18px;
@@ -119,9 +173,9 @@
         }
 
         .tab-btn {
-            background: var(--pill-bg);
+            background: #FAF0EB;
             border: 1px solid transparent;
-            padding: 8px 6px;
+            padding: 9px 6px;
             border-radius: 10px;
             font-size: 10px;
             font-weight: 600;
@@ -137,14 +191,7 @@
             box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
         }
 
-        .instruction-text {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* Carousel Slider Layout */
+        /* Carousel Slider Layout for Demos */
         .carousel-container {
             position: relative;
             width: 100%;
@@ -152,7 +199,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             overflow: hidden;
         }
 
@@ -283,7 +330,7 @@
             display: flex;
             justify-content: center;
             gap: 6px;
-            margin-bottom: 25px;
+            margin-bottom: 40px;
         }
 
         .dot {
@@ -300,78 +347,125 @@
             background: var(--primary-gold);
         }
 
-        /* Footer Columns Style */
-        .footer-nav-section {
-            background: #1c1c1c;
-            color: #ffffff;
-            padding: 40px 20px 20px 20px;
-            margin-top: 40px;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-col {
-            background: #252525;
-            border: 1px solid #333;
-            padding: 20px;
-            border-radius: 16px;
-        }
-
-        .footer-col h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 15px;
-            letter-spacing: 1px;
-            color: #ffffff;
-            margin-bottom: 12px;
-            border-bottom: 1px solid #C5A059;
-            padding-bottom: 6px;
-            display: inline-block;
-        }
-
-        .footer-links-list {
+        /* REFERENCE STYLE OPTIONS LIST (Pills) */
+        .menu-list-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            list-style: none;
+            gap: 14px;
+            margin-bottom: 40px;
         }
 
-        .footer-links-list li a {
-            color: #b0b0b0;
+        .menu-item-pill {
+            background: var(--pill-bg);
+            border: 1px solid var(--pill-border);
+            border-radius: 50px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             text-decoration: none;
-            font-size: 13px;
-            transition: color 0.2s;
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
             cursor: pointer;
         }
 
-        .footer-links-list li a:hover {
-            color: #C5A059;
+        .menu-item-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.15);
+            border-color: var(--primary-gold);
         }
 
-        /* Connect Box Styles */
+        .menu-item-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu-icon-box {
+            width: 36px;
+            height: 36px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .menu-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .menu-dots {
+            font-size: 18px;
+            font-weight: bold;
+            color: #888;
+            letter-spacing: 1px;
+            padding-right: 5px;
+        }
+
+        /* FAQ Accordion Section */
+        .faq-section {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            display: none;
+            line-height: 1.5;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Connect / Social Box */
         .connect-box {
-            background: #252525;
-            border: 1px solid #333;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
             padding: 25px 20px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
-            max-width: 600px;
-            margin: 20px auto 0 auto;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
         }
 
         .connect-box h4 {
             font-family: 'Playfair Display', serif;
             font-size: 16px;
-            color: #ffffff;
+            color: var(--text-dark);
             margin-bottom: 15px;
-            border-bottom: 1px solid #C5A059;
+            border-bottom: 1px solid var(--primary-gold);
             padding-bottom: 6px;
             display: inline-block;
         }
@@ -380,61 +474,70 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .social-icon-btn {
             width: 42px;
             height: 42px;
-            background: #1c1c1c;
-            border: 1px solid #444;
+            background: var(--pill-bg);
+            border: 1px solid var(--border-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 18px;
             transition: border-color 0.2s;
         }
 
         .social-icon-btn:hover {
-            border-color: #C5A059;
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
         }
 
         .email-display {
             font-size: 13px;
-            color: #C5A059;
+            color: var(--primary-gold);
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .email-desc {
             font-size: 11px;
-            color: #999;
-            margin-bottom: 15px;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 11px;
-            color: #888;
-            margin: 25px 0 15px 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom-links a {
-            color: #888;
-            text-decoration: none;
+            color: var(--text-muted);
         }
 
         .copyright {
             text-align: center;
             font-size: 11px;
-            color: #666;
-            padding-bottom: 10px;
+            color: #888;
+            padding-bottom: 20px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
         }
 
         /* Modal Customization */
@@ -516,13 +619,27 @@
         <span id="fallback-logo-text" style="display:none; font-family:'Playfair Display',serif; font-weight:700; color:var(--primary-gold); font-size:18px;">IvoryVows</span>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Invitations crafted for every precious celebration <span>designed to impress</span></h1>
-        <p>Turning your special moments into unforgettable digital experiences.</p>
-    </section>
+    <div class="wrapper">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Invitations crafted for every celebration <span>designed to impress</span></h1>
+            <p>Turning your special moments into unforgettable digital experiences.</p>
+        </section>
 
-    <div class="container">
+        <!-- Live Countdown Banner -->
+        <div class="countdown-banner">
+            <div class="countdown-title">✨ Next Booking Special Closing In ✨</div>
+            <div class="countdown-timers">
+                <div class="time-box"><div class="time-num" id="days">04</div><div class="time-label">Days</div></div>
+                <div class="time-box"><div class="time-num" id="hours">18</div><div class="time-label">Hours</div></div>
+                <div class="time-box"><div class="time-num" id="mins">32</div><div class="time-label">Mins</div></div>
+                <div class="time-box"><div class="time-num" id="secs">45</div><div class="time-label">Secs</div></div>
+            </div>
+        </div>
+
+        <!-- DEMO GALLERY SECTION -->
+        <h2 class="section-title">Explore Sample Demos</h2>
         
         <!-- Category Tabs (6 Exact Options) -->
         <div class="category-tabs">
@@ -534,8 +651,6 @@
             <button class="tab-btn" onclick="switchCategory('others')">Others</button>
         </div>
 
-        <p class="instruction-text">Select a category below to explore real samples. Click any design to place your order via DM.</p>
-
         <!-- Carousel Slider Section -->
         <div class="carousel-container">
             <div class="carousel-arrow prev-arrow" onclick="prevCard()">❮</div>
@@ -546,45 +661,121 @@
         <!-- Dots Pagination -->
         <div class="dots-indicator" id="dotsContainer"></div>
 
-    </div>
+        <!-- SHOP & SERVICES OPTIONS (Exact Pill Format) -->
+        <h2 class="section-title">Shop & Services</h2>
+        <div class="menu-list-container">
+            <a class="menu-item-pill" onclick="openInfoModal('Services', 'We specialize in curating exquisite digital celebration stationery and bespoke video invitations. Our boutique crafting services bring elegance and sophistication to every milestone, ensuring your guests feel the joy and warmth of your special day right from the first preview.')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">🛍️</div>
+                    <span class="menu-text">Services & Crafting</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
 
-    <!-- Dark Footer / Navigation Grid -->
-    <footer class="footer-nav-section">
-        <div class="footer-grid">
-            
-            <!-- EXPLORE -->
-            <div class="footer-col">
-                <h4>EXPLORE</h4>
-                <ul class="footer-links-list">
-                    <li><a onclick="openInfoModal('Services', 'We specialize in curating exquisite digital celebration stationery and bespoke video invitations. Our boutique crafting services bring elegance and sophistication to every milestone, ensuring your guests feel the joy and warmth of your special day right from the first preview.')">Services</a></li>
-                    <li><a onclick="openInfoModal('Portfolio', 'Explore our meticulously designed collection of digital web invitations and cinematic video cards. Each project is crafted with refined aesthetics, smooth animations, and personalized touches to reflect your unique celebration style.')">Portfolio</a></li>
-                    <li><a onclick="openInfoModal('Reviews', '<b>★ 4.9 / 5 Client Satisfaction</b><br><br><i>“Absolute perfection! The interactive web invite made our wedding announcement so unique. Everyone loved it!”</i> — Sarah M.<br><br><i>“Super smooth process and delivered right on time. Highly recommended for custom invites!”</i> — Jessica L.')">Reviews</a></li>
-                </ul>
+            <a class="menu-item-pill" onclick="openInfoModal('Portfolio', 'Explore our meticulously designed collection of digital web invitations and cinematic video cards. Each project is crafted with refined aesthetics, smooth animations, and personalized touches to reflect your unique celebration style.')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">✨</div>
+                    <span class="menu-text">Portfolio & Showcase</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="openInfoModal('Reviews', '<b>★ 4.9 / 5 Client Satisfaction</b><br><br><i>“Absolute perfection! The interactive web invite made our wedding announcement so unique. Everyone loved it!”</i> — Sarah M.<br><br><i>“Super smooth process and delivered right on time. Highly recommended for custom invites!”</i> — Jessica L.')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">⭐</div>
+                    <span class="menu-text">4.9/5 Customer Reviews</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="openInfoModal('About Us', 'IvoryVows is a premier boutique design studio dedicated to redefining celebration invitations. We blend elegance, storytelling, and modern web aesthetics to make your announcements truly unforgettable.')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">📖</div>
+                    <span class="menu-text">About IvoryVows</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="openInfoModal('Our Process', '<b>Step 1: Choose Your Design</b><br>Browse our collection and select your favorite template.<br><br><b>Step 2: DM Your Details</b><br>Click the order button below to message us directly on Instagram with your complete event description and preferences.<br><br><b>Step 3: Secure Payment</b><br>We will share the payment details with you in DM.<br><br><b>Step 4: Delivery</b><br>Upon payment confirmation, your customized invite will be shared with you within 2 days!')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">⚙️</div>
+                    <span class="menu-text">Our Process & How It Works</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+        </div>
+
+        <!-- INVITATIONS CATEGORY OPTIONS (Pill Format) -->
+        <h2 class="section-title">Browse Invitations</h2>
+        <div class="menu-list-container">
+            <a class="menu-item-pill" onclick="filterAndScroll('wedding-website')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">🌐</div>
+                    <span class="menu-text">Website Wedding Invites</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="filterAndScroll('wedding-video')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">🎬</div>
+                    <span class="menu-text">Wedding Video Invites</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="filterAndScroll('birthday')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">🎂</div>
+                    <span class="menu-text">Birthday Invites</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="filterAndScroll('baby-shower')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">🍼</div>
+                    <span class="menu-text">Baby Shower Invites</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="filterAndScroll('festival')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">🏮</div>
+                    <span class="menu-text">Festival Invite</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+
+            <a class="menu-item-pill" onclick="filterAndScroll('others')">
+                <div class="menu-item-left">
+                    <div class="menu-icon-box">💌</div>
+                    <span class="menu-text">Others</span>
+                </div>
+                <div class="menu-dots">⋮</div>
+            </a>
+        </div>
+
+        <!-- FAQ SECTION WITH ANSWERS -->
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question"><span>How long does delivery take?</span> <span>+</span></div>
+                <div class="faq-answer">Your customized invite will be delivered to you within 2 days after payment confirmation.</div>
             </div>
-
-            <!-- INVITATIONS (Exact 6 Options) -->
-            <div class="footer-col">
-                <h4>INVITATIONS</h4>
-                <ul class="footer-links-list">
-                    <li><a onclick="filterAndScroll('wedding-website')">Website Wedding Invites</a></li>
-                    <li><a onclick="filterAndScroll('wedding-video')">Wedding Video Invites</a></li>
-                    <li><a onclick="filterAndScroll('birthday')">Birthday Invites</a></li>
-                    <li><a onclick="filterAndScroll('baby-shower')">Baby Shower Invites</a></li>
-                    <li><a onclick="filterAndScroll('festival')">Festival Invite</a></li>
-                    <li><a onclick="filterAndScroll('others')">Others</a></li>
-                </ul>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question"><span>Can I request custom changes in design?</span> <span>+</span></div>
+                <div class="faq-answer">Yes! You can share your complete description and theme preferences in our Instagram DM.</div>
             </div>
-
-            <!-- COMPANY -->
-            <div class="footer-col">
-                <h4>COMPANY</h4>
-                <ul class="footer-links-list">
-                    <li><a onclick="openInfoModal('About Us', 'IvoryVows is a premier boutique design studio dedicated to redefining celebration invitations. We blend elegance, storytelling, and modern web aesthetics to make your announcements truly unforgettable.')">About</a></li>
-                    <li><a onclick="openInfoModal('Our Process', '<b>Step 1: Choose Your Design</b><br>Browse our collection and select your favorite template.<br><br><b>Step 2: DM Your Details</b><br>Click the order button below to message us directly on Instagram with your complete event description and preferences.<br><br><b>Step 3: Secure Payment</b><br>We will share the payment details with you in DM.<br><br><b>Step 4: Delivery</b><br>Upon payment confirmation, your customized invite will be shared with you within 2 days!')">Our Process</a></li>
-                    <li><a onclick="openInfoModal('Contact', 'Connect with us directly on Instagram @ivoryvows_invites for custom inquiries and bookings.')">Contact</a></li>
-                </ul>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question"><span>How do I place an order?</span> <span>+</span></div>
+                <div class="faq-answer">Simply select your favorite design template, click the order button, and message us your requirements on Instagram.</div>
             </div>
-
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question"><span>What payment methods are available?</span> <span>+</span></div>
+                <div class="faq-answer">Payment details and secure options will be shared directly with you in the DM once you finalize your design.</div>
+            </div>
         </div>
 
         <!-- LET'S CONNECT BOX -->
@@ -592,22 +783,20 @@
             <h4>LET'S CONNECT</h4>
             <div class="social-icons">
                 <a href="https://www.instagram.com/ivoryvows_invites/" target="_blank" class="social-icon-btn">📷</a>
-                <a href="mailto:worklovesolutions@gmail.com" class="social-icon-btn">✉️</a>
+                <a href="mailto:worklovesolutions@gmail.com" class="social-icon-btn">✉️️</a>
             </div>
             <div class="email-display">worklovesolutions@gmail.com</div>
             <div class="email-desc">Questions, custom themes or a fresh idea? We would love to hear it.</div>
         </div>
 
-        <div class="footer-bottom-links">
-            <a href="#">Privacy Policy</a> · 
-            <a href="#">Terms & Conditions</a> · 
-            <a href="#">Cookie Policy</a>
-        </div>
-
         <div class="copyright">
             <p>&copy; 2026 IvoryVows · Made with love</p>
         </div>
-    </footer>
+
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://www.instagram.com/ivoryvows_invites/" target="_blank" class="whatsapp-float">💬</a>
 
     <!-- Info / Content Modal -->
     <div class="modal" id="infoModal">
@@ -664,7 +853,7 @@
 
         function filterAndScroll(categoryKey) {
             switchCategory(categoryKey);
-            window.scrollTo({ top: 150, behavior: 'smooth' });
+            window.scrollTo({ top: 120, behavior: 'smooth' });
         }
 
         function renderCarousel() {
@@ -722,6 +911,12 @@
             const items = sampleData[currentCategory];
             currentIndex = (currentIndex - 1 + items.length) % items.length;
             renderCarousel();
+        }
+
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+            let symbol = element.querySelector('.faq-question span:last-child');
+            symbol.innerText = element.classList.contains('active') ? '-' : '+';
         }
 
         function openInfoModal(title, contentHtml) {
