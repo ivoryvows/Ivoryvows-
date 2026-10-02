@@ -427,20 +427,18 @@
                 return;
             }
 
-            // Yahan apna Instagram username daal dein (jaise: ivoryvows)
-            let instaUsername = "ivoryvows"; 
+            // Aapka exact Instagram handle yahan set kar diya gaya hai
+            let instaUsername = "ivoryvows_invites"; 
             
-            let message = `Hello IvoryVows! I want to order: ${currentProduct}. My Name: ${name}, Country: ${country}. Please share payment details.`;
+            let message = `Hello IvoryVows! I want to order this design: ${currentProduct}. My Name: ${name}, Country: ${country}. Please share the payment method.`;
             let encodedMessage = encodeURIComponent(message);
 
-            // Instagram DM redirection link
-            let instagramUrl = `https://ig.me/m/${instaUsername}?text=${encodedMessage}`;
+            // Direct Instagram DM link
+            let directDmUrl = `https://ig.me/m/${instaUsername}?text=${encodedMessage}`;
+
+            // Redirect user directly to Instagram chat
+            window.location.href = directDmUrl;
             
-            // Fallback web direct link agar ig.me open na ho
-            window.open(`https://www.instagram.com/direct/new/`, '_blank');
-            
-            // Alert user to send message
-            alert("Aapka message taiyar hai! Instagram chat khulne par wahan paste kar dein ya details share karein.");
             closeOrderModal();
         }
     </script>
