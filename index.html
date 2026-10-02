@@ -427,17 +427,10 @@
                 return;
             }
 
-            // Aapka exact Instagram handle yahan set kar diya gaya hai
             let instaUsername = "ivoryvows_invites"; 
             
-            let message = `Hello IvoryVows! I want to order this design: ${currentProduct}. My Name: ${name}, Country: ${country}. Please share the payment method.`;
-            let encodedMessage = encodeURIComponent(message);
-
-            // Direct Instagram DM link
-            let directDmUrl = `https://ig.me/m/${instaUsername}?text=${encodedMessage}`;
-
-            // Redirect user directly to Instagram chat
-            window.location.href = directDmUrl;
+            // Seedha aapke Instagram page par redirect karega bina kisi error ke
+            window.location.href = `https://www.instagram.com/${instaUsername}/`;
             
             closeOrderModal();
         }
