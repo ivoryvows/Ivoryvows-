@@ -336,7 +336,7 @@
                     </div>
                     <div class="card-content">
                         <div class="card-title">Little Prince Baby Shower</div>
-                        <button class="order-btn" onclick="openOrderModal('Little Prince Baby Shower')">Place Order via Insta DM Link</button>
+                        <button class="order-btn" onclick="openOrderModal('Little Prince Baby Shower')">Place Order via Insta DM</button>
                     </div>
                 </div>
             </div>
@@ -370,11 +370,11 @@
             <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; margin-bottom: 15px;" id="selectedProductText"></p>
             
             <!-- Instruction message -->
-            <div class="modal-instruction">
+            <div class="modal-instruction" id="instructionText">
                 Please message me your design and country in DM, and I will send you the prices and details.
             </div>
 
-            <button class="submit-order-btn" onclick="sendToInstagram()">OK, Open Instagram DM</button>
+            <button class="submit-order-btn" onclick="copyAndOpenInstagram()">Copy Message & Open Instagram</button>
         </div>
     </div>
 
@@ -395,11 +395,21 @@
             document.getElementById('orderModal').style.display = 'none';
         }
 
-        function sendToInstagram() {
-            let instaUsername = "ivoryvows_invites"; 
-            
-            // Opens Instagram Direct Message (DM) chat window directly
-            window.location.href = `https://ig.me/m/${instaUsername}`;
+        function copyAndOpenInstagram() {
+            let instaUsername = "ivoryvows_invites"; // Apka Instagram username
+            let textToCopy = `Hi, I want to order "${currentProduct}". Please let me know the prices and details.`;
+
+            // Text ko automatically copy kar lega
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("Message copied! Now paste it in Instagram DM.");
+            }).catch(err => {
+                console.log('Failed to copy', err);
+            });
+
+            // Instagram profile khol dega taaki user wahan paste kar sake
+            setTimeout(() => {
+                window.location.href = `https://www.instagram.com/${instaUsername}/`;
+            }, 500);
             
             closeOrderModal();
         }
