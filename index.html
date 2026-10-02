@@ -369,9 +369,9 @@
             <h3>Place Your Order</h3>
             <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; margin-bottom: 15px;" id="selectedProductText"></p>
             
-            <!-- Instruction message -->
-            <div class="modal-instruction" id="instructionText">
-                Please message me your design and country in DM, and I will send you the prices and details.
+            <!-- Clear & Detailed Instruction Message -->
+            <div class="modal-instruction">
+                Please message me your design name and your country in Instagram DM so I can send you the prices and details.
             </div>
 
             <button class="submit-order-btn" onclick="copyAndOpenInstagram()">Copy Message & Open Instagram</button>
@@ -396,17 +396,17 @@
         }
 
         function copyAndOpenInstagram() {
-            let instaUsername = "ivoryvows_invites"; // Apka Instagram username
-            let textToCopy = `Hi, I want to order "${currentProduct}". Please let me know the prices and details.`;
+            let instaUsername = "ivoryvows_invites"; 
+            let textToCopy = `Hi, I want to order "${currentProduct}". Here is my design name and country: `;
 
-            // Text ko automatically copy kar lega
+            // Automatically copies the text so user can easily paste it
             navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Message copied! Now paste it in Instagram DM.");
+                alert("Message copied! Now open DM and paste it.");
             }).catch(err => {
                 console.log('Failed to copy', err);
             });
 
-            // Instagram profile khol dega taaki user wahan paste kar sake
+            // Opens Instagram profile
             setTimeout(() => {
                 window.location.href = `https://www.instagram.com/${instaUsername}/`;
             }, 500);
