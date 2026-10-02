@@ -46,7 +46,7 @@
             z-index: 1;
         }
 
-        /* Clean Header without icons */
+        /* Clean Header */
         header {
             background: rgba(255, 246, 240, 0.95);
             backdrop-filter: blur(10px);
@@ -79,7 +79,7 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 10px;
@@ -105,14 +105,14 @@
             z-index: 2;
         }
 
-        /* Category Selector Tabs */
+        /* Category Selector Tabs - Scrollable grid for 6 options */
         .category-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
             margin-bottom: 20px;
             background: #FFFFFF;
-            padding: 10px;
+            padding: 12px;
             border-radius: 18px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
@@ -121,13 +121,14 @@
         .tab-btn {
             background: var(--pill-bg);
             border: 1px solid transparent;
-            padding: 9px;
-            border-radius: 12px;
-            font-size: 11px;
+            padding: 8px 6px;
+            border-radius: 10px;
+            font-size: 10px;
             font-weight: 600;
             color: var(--text-dark);
             cursor: pointer;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .tab-btn.active {
@@ -218,7 +219,7 @@
             bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             color: white;
             border: none;
             padding: 5px 12px;
@@ -230,6 +231,7 @@
             gap: 5px;
             backdrop-filter: blur(4px);
             cursor: pointer;
+            text-decoration: none;
         }
 
         .card-info {
@@ -490,13 +492,25 @@
         }
 
         .modal-body-text li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .dm-btn-popup {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 12px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header without icons -->
+    <!-- Header -->
     <header>
         <img src="logo.PNG" alt="IvoryVows Logo" class="header-logo" onerror="this.style.display='none'; document.getElementById('fallback-logo-text').style.display='block';">
         <span id="fallback-logo-text" style="display:none; font-family:'Playfair Display',serif; font-weight:700; color:var(--primary-gold); font-size:18px;">IvoryVows</span>
@@ -504,21 +518,23 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Invitations as special as the moment itself <span>designed to impress</span></h1>
-        <p>The best events don't start on the day—they start with the invitation.</p>
+        <h1>Invitations crafted for every precious celebration <span>designed to impress</span></h1>
+        <p>Turning your special moments into unforgettable digital experiences.</p>
     </section>
 
     <div class="container">
         
-        <!-- Category Tabs -->
+        <!-- Category Tabs (6 Exact Options) -->
         <div class="category-tabs">
-            <button class="tab-btn active" onclick="switchCategory('wedding-website')">Wedding Website</button>
-            <button class="tab-btn" onclick="switchCategory('wedding-video')">Wedding Video</button>
-            <button class="tab-btn" onclick="switchCategory('birthday-website')">Birthday Website</button>
-            <button class="tab-btn" onclick="switchCategory('birthday-video')">Birthday Video</button>
+            <button class="tab-btn active" onclick="switchCategory('wedding-website')">Website Wedding Invites</button>
+            <button class="tab-btn" onclick="switchCategory('wedding-video')">Wedding Video Invites</button>
+            <button class="tab-btn" onclick="switchCategory('birthday')">Birthday Invites</button>
+            <button class="tab-btn" onclick="switchCategory('baby-shower')">Baby Shower Invites</button>
+            <button class="tab-btn" onclick="switchCategory('festival')">Festival Invite</button>
+            <button class="tab-btn" onclick="switchCategory('others')">Others</button>
         </div>
 
-        <p class="instruction-text">Choose a celebration format, then drag through the real samples. Tap the centre card to open or preview.</p>
+        <p class="instruction-text">Select a category below to explore real samples. Click any design to place your order via DM.</p>
 
         <!-- Carousel Slider Section -->
         <div class="carousel-container">
@@ -540,19 +556,22 @@
             <div class="footer-col">
                 <h4>EXPLORE</h4>
                 <ul class="footer-links-list">
-                    <li><a onclick="openInfoModal('Services', 'Our bespoke services include interactive digital wedding websites, personalized cinematic video invitations, custom RSVP tracking systems, and exclusive milestone celebration portals crafted with premium royal aesthetics.')">Services</a></li>
-                    <li><a onclick="openInfoModal('Portfolio', 'Explore our curated showcase of elite digital invitations. From grand royal palaces in Dubai & London to intimate destination beach weddings, every design tells a unique love story.')">Portfolio</a></li>
-                    <li><a onclick="openInfoModal('Reviews', 'Rated 5 stars by hundreds of couples worldwide! Read how our interactive invitations left guests spellbound right from the first click.')">Reviews</a></li>
+                    <li><a onclick="openInfoModal('Services', 'We specialize in curating exquisite digital celebration stationery and bespoke video invitations. Our boutique crafting services bring elegance and sophistication to every milestone, ensuring your guests feel the joy and warmth of your special day right from the first preview.')">Services</a></li>
+                    <li><a onclick="openInfoModal('Portfolio', 'Explore our meticulously designed collection of digital web invitations and cinematic video cards. Each project is crafted with refined aesthetics, smooth animations, and personalized touches to reflect your unique celebration style.')">Portfolio</a></li>
+                    <li><a onclick="openInfoModal('Reviews', '<b>★ 4.9 / 5 Client Satisfaction</b><br><br><i>“Absolute perfection! The interactive web invite made our wedding announcement so unique. Everyone loved it!”</i> — Sarah M.<br><br><i>“Super smooth process and delivered right on time. Highly recommended for custom invites!”</i> — Jessica L.')">Reviews</a></li>
                 </ul>
             </div>
 
-            <!-- INVITATIONS (Updated as requested) -->
+            <!-- INVITATIONS (Exact 6 Options) -->
             <div class="footer-col">
                 <h4>INVITATIONS</h4>
                 <ul class="footer-links-list">
-                    <li><a onclick="filterAndScroll('wedding-website')">Wedding Website Invites</a></li>
-                    <li><a onclick="filterAndScroll('wedding-video')">Video Invites</a></li>
-                    <li><a onclick="filterAndScroll('birthday-website')">Birthday & Festival Invites</a></li>
+                    <li><a onclick="filterAndScroll('wedding-website')">Website Wedding Invites</a></li>
+                    <li><a onclick="filterAndScroll('wedding-video')">Wedding Video Invites</a></li>
+                    <li><a onclick="filterAndScroll('birthday')">Birthday Invites</a></li>
+                    <li><a onclick="filterAndScroll('baby-shower')">Baby Shower Invites</a></li>
+                    <li><a onclick="filterAndScroll('festival')">Festival Invite</a></li>
+                    <li><a onclick="filterAndScroll('others')">Others</a></li>
                 </ul>
             </div>
 
@@ -560,9 +579,9 @@
             <div class="footer-col">
                 <h4>COMPANY</h4>
                 <ul class="footer-links-list">
-                    <li><a onclick="openInfoModal('About Us', 'IvoryVows is a premier boutique design studio dedicated to redefining celebration invitations. We blend elegance, storytelling, and cutting-edge technology to make your big day unforgettable.')">About</a></li>
-                    <li><a onclick="openInfoModal('Our Process', '<b>Step 1: Choose Your Design</b><br>Select from our exclusive templates or request a custom aesthetic.<br><br><b>Step 2: Share Details & Brief</b><br>Provide your event dates, gallery photos, and love story details.<br><br><b>Step 3: Review & Refine</b><br>We build your live interactive preview and fine-tune every touchpoint.<br><br><b>Step 4: Share & Celebrate</b><br>Send your magical link instantly to guests via Instagram or WhatsApp!')">Our Process</a></li>
-                    <li><a onclick="openInfoModal('Contact', 'Connect with us directly on Instagram @ivoryvows_invites or drop an email at worklovesolutions@gmail.com for custom inquiries.')">Contact</a></li>
+                    <li><a onclick="openInfoModal('About Us', 'IvoryVows is a premier boutique design studio dedicated to redefining celebration invitations. We blend elegance, storytelling, and modern web aesthetics to make your announcements truly unforgettable.')">About</a></li>
+                    <li><a onclick="openInfoModal('Our Process', '<b>Step 1: Choose Your Design</b><br>Browse our collection and select your favorite template.<br><br><b>Step 2: DM Your Details</b><br>Click the order button below to message us directly on Instagram with your complete event description and preferences.<br><br><b>Step 3: Secure Payment</b><br>We will share the payment details with you in DM.<br><br><b>Step 4: Delivery</b><br>Upon payment confirmation, your customized invite will be shared with you within 2 days!')">Our Process</a></li>
+                    <li><a onclick="openInfoModal('Contact', 'Connect with us directly on Instagram @ivoryvows_invites for custom inquiries and bookings.')">Contact</a></li>
                 </ul>
             </div>
 
@@ -602,21 +621,28 @@
     <script>
         const sampleData = {
             'wedding-website': [
-                { title: "Arabic Envelop", type: "Wedding Website", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" },
-                { title: "Heritage Palace", type: "Wedding Website", img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" },
-                { title: "Bosphorus Pearl", type: "Wedding Website", img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" },
-                { title: "Château Blush", type: "Wedding Website", img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" }
+                { title: "Arabic Envelop Wedding", type: "Website Wedding Invite", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" },
+                { title: "Heritage Palace Web", type: "Website Wedding Invite", img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" }
             ],
             'wedding-video': [
-                { title: "Royal Gold Cinematic", type: "Wedding Video", img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" },
-                { title: "Floral Bloom Invite", type: "Wedding Video", img: "https://images.unsplash.com/photo-1545232979-fbf802c64838?auto=format&fit=crop&w=600&q=80" }
+                { title: "Royal Gold Cinematic Video", type: "Wedding Video Invite", img: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" },
+                { title: "Floral Bloom Motion Invite", type: "Wedding Video Invite", img: "https://images.unsplash.com/photo-1545232979-fbf802c64838?auto=format&fit=crop&w=600&q=80" }
             ],
-            'birthday-website': [
-                { title: "Golden Sparkle Milestone", type: "Birthday & Festival", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" },
-                { title: "Little Prince Celebration", type: "Birthday & Festival", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" }
+            'birthday': [
+                { title: "Golden Sparkle Milestone", type: "Birthday Invite", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" },
+                { title: "Party Confetti Celebration", type: "Birthday Invite", img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" }
             ],
-            'birthday-video': [
-                { title: "Party Confetti Blast", type: "Birthday & Festival", img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" }
+            'baby-shower': [
+                { title: "Little Prince Welcome", type: "Baby Shower Invite", img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80" },
+                { title: "Pastel Dreams Shower", type: "Baby Shower Invite", img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80" }
+            ],
+            'festival': [
+                { title: "Eid Royal Celebration", type: "Festival Invite", img: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" },
+                { title: "Festive Lights Greeting", type: "Festival Invite", img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" }
+            ],
+            'others': [
+                { title: "Anniversary Milestone", type: "Others", img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" },
+                { title: "Housewarming Celebration", type: "Others", img: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" }
             ]
         };
 
@@ -667,9 +693,9 @@
                 card.innerHTML = `
                     <div class="card-media">
                         <img src="${item.img}" alt="${item.title}">
-                        <button class="open-preview-btn" onclick="event.stopPropagation(); openInfoModal('${item.title}', 'Explore this exclusive template live! Contact us via Instagram to customize this with your names, venue details, and love story.')">
-                            ▶ Open website
-                        </button>
+                        <a href="https://www.instagram.com/ivoryvows_invites/" target="_blank" class="open-preview-btn" onclick="event.stopPropagation();">
+                            💬 Order via DM
+                        </a>
                     </div>
                     <div class="card-info">
                         <div class="card-category-label">${item.type}</div>
@@ -680,7 +706,8 @@
 
                 const dot = document.createElement('div');
                 dot.className = index === currentIndex ? 'dot active' : 'dot';
-                dot.onclick = () => { currentIndex = index; renderCarousel(); };
+                dot.dotIndex = index;
+                dot.onclick = () => { currentIndex = dot.dotIndex; renderCarousel(); };
                 dotsContainer.appendChild(dot);
             });
         }
@@ -699,7 +726,7 @@
 
         function openInfoModal(title, contentHtml) {
             document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalBody').innerHTML = contentHtml;
+            document.getElementById('modalBody').innerHTML = contentHtml + `<br><div style="text-align:center;"><a href="https://www.instagram.com/ivoryvows_invites/" target="_blank" class="dm-btn-popup">Message on Instagram</a></div>`;
             document.getElementById('infoModal').style.display = 'flex';
         }
 
