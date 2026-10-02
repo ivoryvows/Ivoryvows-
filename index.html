@@ -63,17 +63,21 @@
         }
 
         .header-logo {
-            height: 45px;
+            height: 40px;
             width: auto;
             object-fit: contain;
         }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 18px;
-            color: var(--text-dark);
+        /* Right side custom tag / button */
+        .header-tag {
+            background-color: var(--pill-bg);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: var(--primary-gold);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         /* Hero Section */
@@ -467,12 +471,12 @@
 </head>
 <body>
 
+    <!-- Header: Logo.PNG on left, Cute Custom Badge on right -->
     <header>
-        <img src="logo.png" alt="IvoryVows Logo" class="header-logo">
-        <div class="header-right">
-            <span>🌐</span>
-            <span style="font-size: 20px; cursor: pointer;">&#9776;</span>
-        </div>
+        <img src="logo.PNG" alt="IvoryVows Logo" class="header-logo" onerror="this.style.display='none'; document.getElementById('fallback-logo-text').style.display='block';">
+        <span id="fallback-logo-text" style="display:none; font-family:'Playfair Display',serif; font-weight:700; color:var(--primary-gold); font-size:18px;">IvoryVows</span>
+        
+        <div class="header-tag">✨ Bespoke Invites</div>
     </header>
 
     <section class="hero">
@@ -713,7 +717,6 @@
     </footer>
 
     <script>
-        // Single Frame Floating Boxes Slider Logic
         let currentFloatingSlide = 0;
         const floatingSlides = document.querySelectorAll('.floating-slide');
 
