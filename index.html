@@ -205,12 +205,25 @@
             max-width: 400px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             position: relative;
+            text-align: center;
         }
 
         .modal-content h3 {
             font-family: 'Playfair Display', serif;
             margin-bottom: 15px;
             color: var(--text-dark);
+        }
+
+        .modal-instruction {
+            font-size: 14px;
+            color: var(--text-dark);
+            background: #FDFBF7;
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-weight: 500;
         }
 
         .close-modal {
@@ -222,32 +235,6 @@
             color: var(--text-muted);
         }
 
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text-dark);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: var(--primary-gold);
-        }
-
         .submit-order-btn {
             background-color: var(--primary-gold);
             color: white;
@@ -257,7 +244,6 @@
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         footer {
@@ -297,12 +283,10 @@
         <div class="category-section" id="wedding">
             <h2 class="category-title">Video Wedding Invites</h2>
             <div class="grid">
-                <!-- Card 1 -->
                 <div class="card">
                     <div class="media-box">
                         <video controls poster="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80">
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-bride-and-groom-holding-hands-41772-large.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="card-content">
@@ -310,12 +294,10 @@
                         <button class="order-btn" onclick="openOrderModal('Classic Royal Gold Wedding')">Place Order via Insta DM</button>
                     </div>
                 </div>
-                <!-- Card 2 -->
                 <div class="card">
                     <div class="media-box">
                         <video controls poster="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80">
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-happy-bride-and-groom-in-nature-41774-large.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="card-content">
@@ -384,20 +366,15 @@
     <div class="modal" id="orderModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeOrderModal()">&times;</span>
-            <h3>Complete Your Order</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 15px;" id="selectedProductText"></p>
+            <h3>Place Your Order</h3>
+            <p style="font-size: 13px; color: var(--primary-gold); font-weight: 600; margin-bottom: 15px;" id="selectedProductText"></p>
             
-            <div class="form-group">
-                <label>Your Name</label>
-                <input type="text" id="userName" placeholder="Enter your full name">
-            </div>
-            
-            <div class="form-group">
-                <label>Your Country</label>
-                <input type="text" id="userCountry" placeholder="e.g. India, UAE, UK, USA">
+            <!-- Instruction message -->
+            <div class="modal-instruction">
+                Please message me your design and country in DM, and I will send you the prices and details.
             </div>
 
-            <button class="submit-order-btn" onclick="sendToInstagram()">Proceed to Instagram DM</button>
+            <button class="submit-order-btn" onclick="sendToInstagram()">OK, Open Instagram DM</button>
         </div>
     </div>
 
@@ -419,17 +396,9 @@
         }
 
         function sendToInstagram() {
-            let name = document.getElementById('userName').value.trim();
-            let country = document.getElementById('userCountry').value.trim();
-
-            if(!name || !country) {
-                alert("Please fill in both your name and country!");
-                return;
-            }
-
             let instaUsername = "ivoryvows_invites"; 
             
-            // Seedha aapke Instagram page par redirect karega bina kisi error ke
+            // Redirects directly to your Instagram profile
             window.location.href = `https://www.instagram.com/${instaUsername}/`;
             
             closeOrderModal();
